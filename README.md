@@ -7,4 +7,3 @@ Het doel van dit profielwerkstuk is om een algoritme te maken dat roosters voor 
 1. Geen dubbele lessen (tenzij het een extra vak is)
 2. Beschikbaarheid docenten
 3. Zo fijn mogelijk voor leerlingen/docenten
-
