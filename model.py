@@ -54,9 +54,10 @@ class Timetable():
 
 
 if __name__ == "__main__":
-	groups = [Group("A"), Group("B"), Group("C"), Group("D"), Group("E")]
-	subjects = [Subject("α"), Subject("β"), Subject("γ"), Subject("δ"), Subject("ε")]
-	hours = [1, 2, 3, 4, 5, 6, 7, 8]
+	groups = [Group("A"), Group("B"), Group("C"), Group("D"), Group("E"), Group("F"), Group("G"), Group("H"), Group("I")]
+	subjects = [Subject("α"), Subject("β"), Subject("γ"), Subject("δ"), Subject("ε"), Subject("ζ"), Subject("η"), Subject("θ"), Subject("ι"), Subject("κ")]
+	# hours = [1, 2, 3, 4, 5, 6, 7, 8]
+	hours = list(range(1, 41))
 	timetable = Timetable(hours, groups, subjects)
 
 	for subject in subjects:
