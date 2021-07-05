@@ -3,15 +3,18 @@ from tabulate import tabulate
 from Subject import Subject
 from Lesson import Lesson
 from Group import Group
+from Teacher import Teacher
+
 
 class Timetable():
-    def __init__(self, hours, groups, subjects):
+    def __init__(self, hours, groups, subjects, teachers):
         self.lessons = []
         self.hours = hours
         self.groups = groups
         self.subjects = subjects
+        self.teacher = teachers
 
-    def add_lesson(self, group: Group, subject: Subject, hour: int):
+    def add_lesson(self, group: Group, subject: Subject, hour: int, *teacher: Teacher):
         lesson = Lesson(hour, group, subject)
         group.add_lesson(lesson)
         subject.add_lesson(lesson)

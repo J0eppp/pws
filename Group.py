@@ -1,5 +1,6 @@
 from Default import Default
 
+
 class Group(Default):
     def __init__(self, group):
         self.group = group
