@@ -1,0 +1,90 @@
+{
+    "teachers": [
+        {
+            "name": "Docent 1",
+            "subject": "WISKUNDE"
+        },
+        {
+            "name": "Docent 2",
+            "subject": "ENGELS"
+        },
+        {
+            "name": "Docent 3",
+            "subject": "NEDERLANDS"
+        },
+        {
+            "name": "Docent 4",
+            "subject": "GESCHIEDENIS"
+        },
+        {
+            "name": "Docent 5",
+            "subject": "FRANS"
+        },
+        {
+            "name": "Docent 6",
+            "subject": "DUITS"
+        },
+        {
+            "name": "Docent 7",
+            "subject": "AARDRIJKSKUNDE"
+        },
+        {
+            "name": "Docent 8",
+            "subject": "NASK"
+        }
+    ],
+    "classes": [
+        {
+            "name": "Klas 1",
+            "subjects": [
+                "WISKUNDE",
+                "ENGELS",
+                "NEDERLANDS",
+                "GESCHIEDENIS",
+                "FRANS",
+                "DUITS",
+                "AARDRIJKSKUNDE",
+                "NASK"
+            ]
+        },
+        {
+            "name": "Klas 2",
+            "subjects": [
+                "WISKUNDE",
+                "ENGELS",
+                "NEDERLANDS",
+                "GESCHIEDENIS",
+                "FRANS",
+                "DUITS",
+                "AARDRIJKSKUNDE",
+                "NASK"
+            ]
+        },
+        {
+            "name": "Klas 3",
+            "subjects": [
+                "WISKUNDE",
+                "ENGELS",
+                "NEDERLANDS",
+                "GESCHIEDENIS",
+                "FRANS",
+                "DUITS",
+                "AARDRIJKSKUNDE",
+                "NASK"
+            ]
+        },
+        {
+            "name": "Klas 4",
+            "subjects": [
+                "WISKUNDE",
+                "ENGELS",
+                "NEDERLANDS",
+                "GESCHIEDENIS",
+                "FRANS",
+                "DUITS",
+                "AARDRIJKSKUNDE",
+                "NASK"
+            ]
+        }
+    ]
+}
