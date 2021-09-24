@@ -1,3 +1,7 @@
+"""
+Profielwerkstuk - 6 VWO - roosteroptimalisatie
+Door Sam Staijen en Joep van Dijk
+"""
 import argparse
 from LPSolver import LPSolver
 import utils
