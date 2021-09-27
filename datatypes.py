@@ -1,6 +1,7 @@
 from enum import Enum, auto
 from dataclasses import dataclass
 from typing import List
+from GapCounter import countGapHours
 
 # Enum with all subjects
 # class Subject(Enum):
@@ -33,3 +34,7 @@ class Lesson:
 class Timetable:
     # subjects: List[Subject]
     lessons: List[Lesson]
+
+@dataclass
+class GapHours:
+    amount: countGapHours
