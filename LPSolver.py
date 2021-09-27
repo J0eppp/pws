@@ -12,13 +12,14 @@ class LPSolver(Solver):
     """
     The lineair programming solution class of our problem
     """
-    def __init__(self, timetable: types.Timetable, amount_of_hours_a_day: int, amount_of_days_a_week: int, groups: List[int], teachers: List[int]):
+    def __init__(self, timetable: types.Timetable, amount_of_hours_a_day: int, amount_of_days_a_week: int, groups: List[int], teachers: List[int], amount: List[int]):
         super().__init__(timetable)
         self.model = None
         self.amount_of_hours_a_day = amount_of_hours_a_day
         self.amount_of_days_a_week = amount_of_days_a_week
         self.groups = groups
         self.teachers = teachers
+        self.amount = amount # How often a class should get a lesson per week
 
     def solve(self):
         return self.__solve(self.timetable)
@@ -66,6 +67,7 @@ class LPSolver(Solver):
 
     def __solve(self, timetable: types.Timetable):
         self.model = Model(sense=MINIMIZE, solver_name=CBC)
+        self.model.verbose = 0
         
         # Variables
         H = self.amount_of_days_a_week * self.amount_of_hours_a_day
@@ -76,15 +78,26 @@ class LPSolver(Solver):
 
         S = []
         for group in self.groups:
-            for teacher in self.teachers:
-                for day in range(self.amount_of_days_a_week):
-                    for hour in range(self.amount_of_hours_a_day):
-                        if self.canSchedule(day, hour, teacher, group, S) == True:
-                            S.append((day, hour, teacher, group, self.model.add_var(var_type=BINARY)))
-        
+            # for teacher in self.teachers:
+            for i in range(len(self.teachers)):
+                teacher = self.teachers[i]
+                for j in range(self.amount[i]): # how often a subject should be schedules for each class
+                    scheduled = False
+                    for day in range(self.amount_of_days_a_week):
+                        if scheduled == True:
+                            continue
+                        for hour in range(self.amount_of_hours_a_day):
+                            if scheduled == True:
+                                continue
+                            if self.canSchedule(day, hour, teacher, group, S) == True:
+                                S.append((day, hour, teacher, group, self.model.add_var(var_type=BINARY)))
+                                scheduled = True
+                    if scheduled == False:
+                        utils.uprint(f"ERROR: WAS NOT ABLE TO SCHEDULE A CLASS")
 
         end_time = time.process_time()
         utils.uprint("Done creating variables")
+        utils.uprint(f"Created {len(S)} variables")
         utils.uprint(f"Creating variables took: {end_time - start_time} seconds")
         utils.uprint("-==================================-")
 
@@ -93,6 +106,8 @@ class LPSolver(Solver):
         utils.uprint("Creating constraints")
         start_time = time.process_time()
         # TODO add constraints
+
+        
 
 
         end_time = time.process_time()
