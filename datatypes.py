@@ -37,7 +37,7 @@ class Timetable:
     lessons: List[Lesson]
     
     def countGapHours(self) -> int:
-        """Couont all the gap hours in the timetable"""
+        """Count all the gap hours in the timetable"""
         timetable = [[[]]]
         
         gap_hours = 0

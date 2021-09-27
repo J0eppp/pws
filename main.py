@@ -9,6 +9,11 @@ import time
 import datatypes as types
 
 if __name__ == "__main__":
+    # TEMP VARIABLES
+    # These variables store the data that will be used to get the result
+    groups = [1, 2, 3, 4]
+    teachers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
     # Setup program variables
     lp = False
 
@@ -25,7 +30,7 @@ if __name__ == "__main__":
     # Select the right solver
     if lp == True:
         # Select the linear programming solver
-        solver = LPSolver(timetable)
+        solver = LPSolver(timetable, 9, 5, groups, teachers)
         utils.uprint("Solver found, using the linear programming solver")
 
     if solver == None:
