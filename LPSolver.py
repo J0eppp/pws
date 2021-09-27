@@ -10,9 +10,9 @@ class LPSolver(Solver):
     The lineair programming solution class of our problem
     """
     def __init__(self, timetable: types.Timetable):
-        super().__init__()
+        super().__init__(timetable)
         self.model = None
-        self.timetable = timetable
+        # self.timetable = timetable
     
     def solve(self):
         return self.__solve(self.timetable)

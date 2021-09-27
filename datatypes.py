@@ -1,7 +1,6 @@
 from enum import Enum, auto
 from dataclasses import dataclass
 from typing import List
-from GapCounter import countGapHours
 
 # Enum with all subjects
 # class Subject(Enum):
@@ -29,12 +28,31 @@ class Group:
 class Lesson:
     teacher: Teacher
     group: Group
+    day: int
+    hour: int
 
 @dataclass
 class Timetable:
     # subjects: List[Subject]
     lessons: List[Lesson]
+    
+    def countGapHours(self) -> int:
+        timetable = [[[]]]
+        
+        gap_hours = 0
 
-@dataclass
-class GapHours:
-    amount: countGapHours
+        for lesson in self.lessons:
+            d, h, g = lesson.day, lesson.hour, lesson.group
+
+            timetable[g][d].append(h)
+
+            for g in timetable:
+                for d in timetable[g]:
+                    arr = timetable[g][d]
+                    arr = arr.sort()
+                    first = arr[0]
+                    last = arr[-1]
+                    amount = last - (first - 1) - len(arr)
+                    gap_hours += amount
+        
+        return gap_hours
