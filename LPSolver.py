@@ -20,6 +20,7 @@ class LPSolver(Solver):
         self.groups = groups
         self.teachers = teachers
         self.amount = amount # How often a class should get a lesson per week
+        self.amount_of_lessons_to_schedule = len(self.groups) * sum(self.amount)
 
     def solve(self):
         return self.__solve(self.timetable)
@@ -66,7 +67,7 @@ class LPSolver(Solver):
         return gap_hours
 
     def __solve(self, timetable: types.Timetable):
-        self.model = Model(sense=MINIMIZE, solver_name=CBC)
+        self.model = Model(sense=MINIMIZE)
         self.model.verbose = 0
         
         # Variables
@@ -102,25 +103,43 @@ class LPSolver(Solver):
         utils.uprint("-==================================-")
 
         # Constrains
+        nr_constraints = 0
         utils.uprint("-==================================-")
         utils.uprint("Creating constraints")
         start_time = time.process_time()
-        # TODO add constraints
+        # TODO fix this first constraint
+        # # The first contraint is that the length of S has to be equal to the amount of lessons that has to be scheduled
+        # self.model += len(S) - self.amount_of_lessons_to_schedule == 0
+        # nr_constraints += 1
 
-        
+        utils.uprint(f"Contstraint 1: {len(S) - self.amount_of_lessons_to_schedule == 0}")
 
+        # The second constraint makes sure that a lesson should be schedules a specific amount of times
+        for group in self.groups:
+            for i in range(len(self.teachers)):
+                teacher = self.teachers[i]
+                amount = self.amount[i]
+                self.model += xsum([1 for (_, _, g, t, var) in S if g == group and t == teacher]) == amount
+                nr_constraints += 1
 
         end_time = time.process_time()
         utils.uprint("Done creating constraints")
+        utils.uprint(f"Created {nr_constraints} constraints")
         utils.uprint(f"Creating constraints took {end_time - start_time} seconds")
         utils.uprint("-==================================-")
 
 
 
         # Objective function
-        # self.model.objective = minimize(self.timetable.countGapHours())
         self.model.objective = self.timetable.countGapHours()
 
         self.model.optimize()
+
+        selected = [(d, h, g, t, var) for (d, h, g, t, var) in S if var.x >= 0.99]
+
+        utils.uprint(f"Amount of hours selected: {len(selected)}")
+        utils.uprint(selected)
+
+        # utils.uprint(S)
 
         return self.model

@@ -11,7 +11,7 @@ import datatypes as types
 if __name__ == "__main__":
     # TEMP VARIABLES
     # These variables store the data that will be used to get the result
-    groups = [1, 2, 3, 4]
+    groups = [1, 2, 3]
     teachers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     amount = [2, 2, 3, 2, 4, 2, 2, 3, 2]
 
