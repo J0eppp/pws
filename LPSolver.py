@@ -13,13 +13,13 @@ class LPSolver(Solver):
     The lineair programming solution class of our problem
     """
     def __init__(self, timetable: types.Timetable, amount_of_hours_a_day: int, amount_of_days_a_week: int, groups: List[int], teachers: List[int], amount: List[int]):
-        super().__init__(timetable)
+        super().__init__(timetable, amount_of_hours_a_day, amount_of_days_a_week, groups, teachers, amount)
         self.model = None
-        self.amount_of_hours_a_day = amount_of_hours_a_day
-        self.amount_of_days_a_week = amount_of_days_a_week
-        self.groups = groups
-        self.teachers = teachers
-        self.amount = amount # How often a class should get a lesson per week
+        # self.amount_of_hours_a_day = amount_of_hours_a_day
+        # self.amount_of_days_a_week = amount_of_days_a_week
+        # self.groups = groups
+        # self.teachers = teachers
+        # self.amount = amount # How often a class should get a lesson per week
         self.amount_of_lessons_to_schedule = len(self.groups) * sum(self.amount)
 
     def solve(self):
@@ -30,18 +30,6 @@ class LPSolver(Solver):
     
     def __calc_day(self, hour) -> int:
         return floor(hour / self.amount_of_hours_a_day)
-
-    @staticmethod
-    def canSchedule(d, h, t, g, lessons) -> bool:
-        """Check if this lesson is allowed to be scheduled"""
-        for lesson in lessons:
-            # ds, hs, ts, gs = lesson.day, lesson.hour, lesson.teacher, lesson.group
-            ds, hs, ts, gs, _ = lesson
-
-            if (ds == d and hs == h) and (gs == g or ts == t):
-                return False
-        
-        return True
     
     @staticmethod
     def countGapHours(lessons) -> int:
@@ -90,7 +78,7 @@ class LPSolver(Solver):
                         for hour in range(self.amount_of_hours_a_day):
                             if scheduled == True:
                                 continue
-                            if self.canSchedule(day, hour, teacher, group, S) == True:
+                            if self.can_schedule(day, hour, teacher, group, S) == True:
                                 S.append((day, hour, teacher, group, self.model.add_var(var_type=BINARY)))
                                 scheduled = True
                     if scheduled == False:
@@ -128,6 +116,18 @@ class LPSolver(Solver):
         utils.uprint(f"Creating constraints took {end_time - start_time} seconds")
         utils.uprint("-==================================-")
 
+        # Create feasible solution to start with
+        utils.uprint("-==================================-")
+        utils.uprint("Creating feasible solution as a starting point")
+        start_time = time.process_time()
+        feasible_selected = self.create_feasible_timetable()
+        end_time = time.process_time()
+        utils.uprint("Done creating feasible solution")
+        utils.uprint(f"Feasible amount: {len(feasible_selected)}")
+        utils.uprint(f"Creating the feasible solution took {end_time - start_time} seconds")
+        utils.uprint("-==================================-")
+
+        self.model.start = [(var, 1.0) for (d, h, t, g, var) in S if (d, h, t, g) in feasible_selected]
 
 
         # Objective function
@@ -138,8 +138,5 @@ class LPSolver(Solver):
         selected = [(d, h, g, t, var) for (d, h, g, t, var) in S if var.x >= 0.99]
 
         utils.uprint(f"Amount of hours selected: {len(selected)}")
-        utils.uprint(selected)
-
-        # utils.uprint(S)
 
         return self.model
