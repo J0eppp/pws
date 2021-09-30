@@ -31,22 +31,33 @@ class LPSolver(Solver):
     def __calc_day(self, hour) -> int:
         return floor(hour / self.amount_of_hours_a_day)
     
-    @staticmethod
-    def countGapHours(lessons) -> int:
+    def countGapHours(self) -> int:
         """Count all the gap hours in the timetable"""
-        timetable = [[[]]]
+        lessons = self.timetable.lessons
+        # timetable = [[[]]]
+        timetable = [[[]] * self.amount_of_days_a_week ] * len(self.groups)
+        print(timetable)
         
         gap_hours = 0
 
         for lesson in lessons:
-            d, h, g, _, _ = lesson
+            # d, h, g, _, _ = lesson
+            day = lesson.day
+            hour = lesson.hour
+            group = lesson.group
 
-            timetable[g][d].append(h)
+            print(lesson)
 
-            for g in timetable:
-                for d in timetable[g]:
+            timetable[group - 1][day - 1].append(hour)
+
+            for g in range(len(timetable)):
+                print(timetable[g])
+                for d in range(len(timetable[g])):
                     arr = timetable[g][d]
+                    if arr == None:
+                        continue
                     arr = arr.sort()
+                    print(arr)
                     first = arr[0]
                     last = arr[-1]
                     amount = last - (first - 1) - len(arr)
@@ -79,10 +90,14 @@ class LPSolver(Solver):
                             if scheduled == True:
                                 continue
                             if self.can_schedule(day, hour, teacher, group, S) == True:
-                                S.append((day, hour, teacher, group, self.model.add_var(var_type=BINARY)))
+                                lesson = types.Lesson(teacher, group, day, hour, self.model.add_var(var_type=BINARY))
+                                # S.append((day, hour, teacher, group, self.model.add_var(var_type=BINARY)))
+                                S.append(lesson)
                                 scheduled = True
                     if scheduled == False:
                         utils.uprint(f"ERROR: WAS NOT ABLE TO SCHEDULE A CLASS")
+        
+        self.timetable.lessons = S
 
         end_time = time.process_time()
         utils.uprint("Done creating variables")
@@ -102,12 +117,13 @@ class LPSolver(Solver):
 
         utils.uprint(f"Contstraint 1: {len(S) - self.amount_of_lessons_to_schedule == 0}")
 
-        # The second constraint makes sure that a lesson should be schedules a specific amount of times
+        # The second constraint makes sure that a lesson should be scheduled a specific amount of times
         for group in self.groups:
             for i in range(len(self.teachers)):
                 teacher = self.teachers[i]
                 amount = self.amount[i]
-                self.model += xsum([1 for (_, _, g, t, var) in S if g == group and t == teacher]) == amount
+                # self.model += xsum([1 for (_, _, g, t, var) in S if g == group and t == teacher]) == amount
+                self.model += xsum([1 for lesson in self.timetable.lessons if lesson.group == group and lesson.teacher == teacher]) == amount
                 nr_constraints += 1
 
         end_time = time.process_time()
@@ -123,19 +139,25 @@ class LPSolver(Solver):
         feasible_selected = self.create_feasible_timetable()
         end_time = time.process_time()
         utils.uprint("Done creating feasible solution")
-        utils.uprint(f"Feasible amount: {len(feasible_selected)}")
+        utils.uprint(f"Feasible amount: {len(feasible_selected.lessons)}")
         utils.uprint(f"Creating the feasible solution took {end_time - start_time} seconds")
         utils.uprint("-==================================-")
 
-        self.model.start = [(var, 1.0) for (d, h, t, g, var) in S if (d, h, t, g) in feasible_selected]
+        # self.model.start = [(var, 1.0) for (d, h, t, g, var) in S if (d, h, t, g) in feasible_selected]
+        self.model.start = [(lesson.scheduled, 1.0) for lesson in self.timetable.lessons if types.Lesson(lesson.teacher, lesson.group, lesson.day, lesson.hour, None) in feasible_selected.lessons]
 
+        print(self.countGapHours())
 
         # Objective function
-        self.model.objective = self.timetable.countGapHours()
+        self.model.objective = self.countGapHours()
 
         self.model.optimize()
 
-        selected = [(d, h, g, t, var) for (d, h, g, t, var) in S if var.x >= 0.99]
+        # selected = [(d, h, g, t, var) for (d, h, g, t, var) in S if var.x >= 0.99]
+        selected = [lesson for lesson in self.timetable.lessons if lesson.scheduled.x >= 0.99]
+
+        # utils.uprint("Printing the feasible array")
+        # self.print_result(feasible_selected, len(self.groups))
 
         utils.uprint(f"Amount of hours selected: {len(selected)}")
 

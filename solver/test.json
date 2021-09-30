@@ -1,0 +1,25 @@
+{
+    "subjectInformation": [
+        {
+            "subject": "Nederlands",
+            "year": 1,
+            "amount": 4
+        }
+    ],
+    "groups": [
+        {
+            "name": "1A",
+            "year": 1,
+            "subjects": [
+                "Nederlands"
+            ],
+            "lessons": []
+        }
+    ],
+    "teachers": [
+        {
+            "name": "Teacher 1",
+            "subject": "Nederlands"
+        }
+    ]
+}

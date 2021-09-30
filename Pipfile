@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 mip = "*"
+tabulate = "*"
 
 [dev-packages]
 
