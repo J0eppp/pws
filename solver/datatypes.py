@@ -30,9 +30,11 @@ class SubjectInformation:
     year: int
     amount: int
 
+@dataclass
 class Timetable:
     """This class will contain all data and methods to create a feasible timetable, to give to the LP"""
-    def __init__(self, groups: List[Group], teachers: List[Teacher], subject_information: List[SubjectInformation]):
-        self.groups: List[Group] = groups
-        self.teachers: List[Teacher] = teachers
-        self.subject_information: List[SubjectInformation] = subject_information
+    groups: List[Group]
+    teachers: List[Teacher]
+    subject_information: List[SubjectInformation]
+    amount_of_days_a_week: int
+    amount_of_hours_a_day: int
