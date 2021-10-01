@@ -1,0 +1,12 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "terminal.integrated.env.linux": {
+            "path": "/home/joep/.local/share/virtualenvs/pws-MaaTjCmK"
+        },
+    }
+}

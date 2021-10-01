@@ -51,17 +51,21 @@
     "teachers": [
         {
             "name": "Teacher 1",
-            "subject": "Nederlands"
+            "subject": "Nederlands",
+            "lessons": []
         },
         {
             "name": "Teacher 2",
-            "subject": "Engels"
+            "subject": "Engels",
+            "lessons": []
         },
         {
             "name": "Teacher 3",
-            "subject": "Wiskunde"
+            "subject": "Wiskunde",
+            "lessons": []
         }
     ],
+    "lessons": [],
     "amountOfDaysAWeek": 5,
     "amountOfHoursADay": 9
 }
