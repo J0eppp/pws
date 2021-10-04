@@ -19,7 +19,26 @@ class Group(BaseType):
     name: str
     year: int
     subjects: List[str]
-    lessons: List[int]
+    lessons: List["Lesson"]
+
+    def count_gap_hours(self, amount_days_in_a_week: int) -> int:
+        timetable = [[]] * amount_of_days_in_a_week
+
+        for lesson in self.lessons:
+            timetable[lesson.day].append(lesson.hour)
+        
+        amount = 0
+        for day in timetable:
+            if day == None:
+                continue
+            
+            day.sort()
+            first = day[0]
+            last = day[-1]
+            amount += last - (first - 1) - len(day)
+
+        return amount
+
 
 
 @dataclass
@@ -92,29 +111,32 @@ class Timetable:
         """Count all the gap hours in the timetable"""
         gap_hours = 0
 
-        lessons_by_group = dict(
-            (group.name, [[]] * self.amount_of_days_a_week) for group in self.groups)
+        for group in self.groups:
+            gap_hours += group.count_gap_hours(self.amount_of_days_a_week)
 
-        print(lessons_by_group)
+        # lessons_by_group = dict(
+        #     (group.name, [[]] * self.amount_of_days_a_week) for group in self.groups)
 
-        for lesson in self.lessons:
-            print(lesson.day)
-            lessons_by_group[lesson.group.name][lesson.day].append(lesson)
+        # print(lessons_by_group)
 
-        for i in lessons_by_group:
-            for j in range(len(lessons_by_group[i])):
-                print(len(lessons_by_group[i][j]))
+        # for lesson in self.lessons:
+        #     print(lesson.day)
+        #     lessons_by_group[lesson.group.name][lesson.day].append(lesson)
 
-        for group in lessons_by_group:
-            for day in range(len(lessons_by_group[group])):
-                arr = lessons_by_group[group][day]
-                # print(f"Day: {day} len: {len(arr)}")
-                if arr == None:
-                    continue
-                arr.sort(key=lambda x: x.hour)
-                # print([str(x) for x in arr])
-                for lesson in arr:
-                    print(lesson)
+        # for i in lessons_by_group:
+        #     for j in range(len(lessons_by_group[i])):
+        #         print(len(lessons_by_group[i][j]))
+
+        # for group in lessons_by_group:
+        #     for day in range(len(lessons_by_group[group])):
+        #         arr = lessons_by_group[group][day]
+        #         # print(f"Day: {day} len: {len(arr)}")
+        #         if arr == None:
+        #             continue
+        #         arr.sort(key=lambda x: x.hour)
+        #         # print([str(x) for x in arr])
+        #         for lesson in arr:
+        #             print(lesson)
 
         return gap_hours
 
