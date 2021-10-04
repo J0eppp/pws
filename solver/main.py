@@ -48,7 +48,8 @@ def main():
         solver = LPSolver(timetable)
 
     timetable = solver.solve()
-    # utils.uprint(timetable)
+    # utils.uprint(timetable.lessons)
+    utils.uprint(f"Amount of lessons: {len(timetable.lessons)}")
 
 
 if __name__ == "__main__":

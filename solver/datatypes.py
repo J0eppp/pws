@@ -22,7 +22,7 @@ class Group(BaseType):
     subjects: List[str]
     lessons: List["Lesson"]
 
-    def count_gap_hours(self, amount_days_in_a_week: int) -> int:
+    def count_gap_hours(self, amount_of_days_in_a_week: int) -> int:
         timetable = [[]] * amount_of_days_in_a_week
 
         for lesson in self.lessons:
@@ -30,7 +30,7 @@ class Group(BaseType):
         
         amount = 0
         for day in timetable:
-            if day == None:
+            if day == None or len(day) == 0:
                 continue
             
             day.sort()
@@ -50,7 +50,7 @@ class Lesson(BaseType):
     day: int
 
     def __str__(self) -> str:
-        return f"D{self.day}H{self.hour} - G {self.group.name} T {self.teacher.name}"
+        return f"D{self.day}H{self.hour} - G {self.group.name} T {self.teacher.name} subject {self.teacher.subject}"
 
 
 @dataclass
@@ -92,6 +92,7 @@ class Timetable:
 
     def schedule_lesson(self, lesson: Lesson, skip_check=False) -> bool:
         # First we check if we are allowed to schedule this lesson
+        utils.uprint(f"Scheduling: {lesson}")
         if skip_check == False:
             if self.can_schedule(lesson) == False:
                 return False
@@ -148,11 +149,12 @@ class Timetable:
                                 break
                             lesson = Lesson(len(self.lessons) - 1, t, group, hour, day)
                             if self.schedule_lesson(lesson) == True:
+                                lessons.append(lesson)
                                 scheduled += 1
                 
                 if scheduled != amount:
                     utils.uprint(f"[ERROR] could not schedule all lessons for subject: {subject}, group: name: {group.name}, year: {group.year}, id: {group.identifier}")
                     return False
                 
-                self.lessons = lessons
-                return True
+        self.lessons = lessons
+        return True
