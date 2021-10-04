@@ -1,5 +1,6 @@
 from typing import List
 from dataclasses import dataclass
+import utils
 
 
 @dataclass
@@ -11,7 +12,7 @@ class BaseType:
 class Teacher(BaseType):
     name: str
     subject: str
-    lessons: List[int]
+    lessons: List["Lesson"]
 
 
 @dataclass
@@ -97,10 +98,13 @@ class Timetable:
 
         # Then we schedule the lesson
         self.lessons.append(lesson)
+
+        # Then we add it to the group's lessons list
         for group in self.groups:
             if group.identifier == lesson.group.identifier:
                 group.lessons.append(lesson)
 
+        # Then we add it to the teacher's lessons list
         for teacher in self.teachers:
             if teacher.identifier == lesson.teacher.identifier:
                 teacher.lessons.append(lesson)
@@ -114,68 +118,41 @@ class Timetable:
         for group in self.groups:
             gap_hours += group.count_gap_hours(self.amount_of_days_a_week)
 
-        # lessons_by_group = dict(
-        #     (group.name, [[]] * self.amount_of_days_a_week) for group in self.groups)
-
-        # print(lessons_by_group)
-
-        # for lesson in self.lessons:
-        #     print(lesson.day)
-        #     lessons_by_group[lesson.group.name][lesson.day].append(lesson)
-
-        # for i in lessons_by_group:
-        #     for j in range(len(lessons_by_group[i])):
-        #         print(len(lessons_by_group[i][j]))
-
-        # for group in lessons_by_group:
-        #     for day in range(len(lessons_by_group[group])):
-        #         arr = lessons_by_group[group][day]
-        #         # print(f"Day: {day} len: {len(arr)}")
-        #         if arr == None:
-        #             continue
-        #         arr.sort(key=lambda x: x.hour)
-        #         # print([str(x) for x in arr])
-        #         for lesson in arr:
-        #             print(lesson)
-
         return gap_hours
-
-    # def count_gap_hours(self) -> int:
-    #     """Count all the gap hours in the timebale"""
-    #     gap_hours = 0
-
-    #     timetable = dict((lesson.group.name, [
-    #                      []] * self.amount_of_days_a_week) for lesson in self.lessons)
-    #     print(timetable)
-    #     for lesson in self.lessons:
-    #         print("Lesson day: ", lesson.day)
-    #         timetable[lesson.group.name][lesson.day].append(lesson)
-
-    #     for group in timetable:
-    #         print(group)
-    #         for day in timetable[group]:
-    #             # for lesson in timetable[group][day]:
-    #             for lesson in day:
-    #                 print(lesson.teacher.name, lesson.group.name,
-    #                       lesson.day, lesson.hour)
-
-    #     counter = 0
-
-    #     for group in timetable:
-    #         # for day in range(self.amount_of_days_a_week):
-    #         for day in timetable[group]:
-    #             counter += 1
-    #             # timetable[group][day].sort(key=lambda x: x.hour)
-    #             # arr = timetable[group][day]
-    #             arr = sorted(day, key=lambda x: x.hour)
-    #             first = arr[0]
-    #             last = arr[-1]
-    #             print("Day: ", day[0].day)
-    #             print(first.hour)
-    #             print(last.hour)
-    #             amount = last.hour - (first.hour - 1) - len(arr)
-    #             gap_hours += amount
-
-    #     print("Counter: ", counter)
-
-    #     return gap_hours
+    
+    def create_feasible_timetable(self) -> bool:
+        """Create a valid timetable"""
+        lessons = []
+        for group in self.groups:
+            for subject in group.subjects:
+                amount = 0
+                scheduled = 0
+                for subject_info in self.subject_information:
+                    if subject_info.subject == subject and subject_info.year == group.year:
+                        amount = subject_info.amount
+                        break
+                teacher = None
+                for t in self.teachers:
+                    if t.subject == subject:
+                        teacher = t
+                        break
+                
+                for _ in range(amount):
+                    if scheduled == amount:
+                        break
+                    for day in range(self.amount_of_days_a_week):
+                        if scheduled == amount:
+                            break
+                        for hour in range(self.amount_of_hours_a_day):
+                            if scheduled == amount:
+                                break
+                            lesson = Lesson(len(self.lessons) - 1, t, group, hour, day)
+                            if self.schedule_lesson(lesson) == True:
+                                scheduled += 1
+                
+                if scheduled != amount:
+                    utils.uprint(f"[ERROR] could not schedule all lessons for subject: {subject}, group: name: {group.name}, year: {group.year}, id: {group.identifier}")
+                    return False
+                
+                self.lessons = lessons
+                return True
