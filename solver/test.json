@@ -50,16 +50,19 @@
     ],
     "teachers": [
         {
+            "identifier": 0,
             "name": "Teacher 1",
             "subject": "Nederlands",
             "lessons": []
         },
         {
+            "identifier": 1,
             "name": "Teacher 2",
             "subject": "Engels",
             "lessons": []
         },
         {
+            "identifier": 2,
             "name": "Teacher 3",
             "subject": "Wiskunde",
             "lessons": []

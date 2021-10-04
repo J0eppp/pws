@@ -14,6 +14,9 @@ class Teacher(BaseType):
     subject: str
     lessons: List["Lesson"]
 
+    def __str__(self) -> str:
+        return f"{self.name}, subject: {self.subject}"
+
 
 @dataclass
 class Group(BaseType):
@@ -22,24 +25,29 @@ class Group(BaseType):
     subjects: List[str]
     lessons: List["Lesson"]
 
+    def __str__(self) -> str:
+        return f"{self.name}"
+
     def count_gap_hours(self, amount_of_days_in_a_week: int) -> int:
         timetable = [[]] * amount_of_days_in_a_week
 
         for lesson in self.lessons:
             timetable[lesson.day].append(lesson.hour)
-        
+
         amount = 0
         for day in timetable:
             if day == None or len(day) == 0:
                 continue
-            
+
             day.sort()
+            utils.uprint(
+                f"Calculating gap hours for day {day} for group {str(self)}")
             first = day[0]
             last = day[-1]
+            utils.uprint(f"Gap hours: {last - (first - 1) - len(day)}")
             amount += last - (first - 1) - len(day)
 
         return amount
-
 
 
 @dataclass
@@ -105,10 +113,20 @@ class Timetable:
             if group.identifier == lesson.group.identifier:
                 group.lessons.append(lesson)
 
+        counter = 0
+
+        utils.uprint(f"Teacher to schedule: {lesson.teacher}")
+
         # Then we add it to the teacher's lessons list
         for teacher in self.teachers:
             if teacher.identifier == lesson.teacher.identifier:
+                counter += 1
+                utils.uprint(
+                    f"teacher: {teacher.identifier}, lesson teacher: {lesson.teacher.identifier}")
                 teacher.lessons.append(lesson)
+                break
+
+        utils.uprint(self.teachers[counter-1])
 
         return True
 
@@ -120,7 +138,7 @@ class Timetable:
             gap_hours += group.count_gap_hours(self.amount_of_days_a_week)
 
         return gap_hours
-    
+
     def create_feasible_timetable(self) -> bool:
         """Create a valid timetable"""
         lessons = []
@@ -137,7 +155,7 @@ class Timetable:
                     if t.subject == subject:
                         teacher = t
                         break
-                
+
                 for _ in range(amount):
                     if scheduled == amount:
                         break
@@ -147,14 +165,16 @@ class Timetable:
                         for hour in range(self.amount_of_hours_a_day):
                             if scheduled == amount:
                                 break
-                            lesson = Lesson(len(self.lessons) - 1, t, group, hour, day)
+                            lesson = Lesson(
+                                len(self.lessons) - 1, t, group, hour, day)
                             if self.schedule_lesson(lesson) == True:
                                 lessons.append(lesson)
                                 scheduled += 1
-                
+
                 if scheduled != amount:
-                    utils.uprint(f"[ERROR] could not schedule all lessons for subject: {subject}, group: name: {group.name}, year: {group.year}, id: {group.identifier}")
+                    utils.uprint(
+                        f"[ERROR] could not schedule all lessons for subject: {subject}, group: name: {group.name}, year: {group.year}, id: {group.identifier}")
                     return False
-                
+
         self.lessons = lessons
         return True

@@ -24,5 +24,6 @@ class LPSolver(Solver):
         # self.timetable.schedule_lesson(lesson)
         # print("Amount of gap hours: ", self.timetable.count_gap_hours())
         self.timetable.create_feasible_timetable()
-        utils.uprint(self.timetable.count_gap_hours())
+        utils.uprint(
+            f"Amount of gap hours: {self.timetable.count_gap_hours()}")
         return self.timetable
