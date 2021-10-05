@@ -29,22 +29,25 @@ class Group(BaseType):
         return f"{self.name}"
 
     def count_gap_hours(self, amount_of_days_in_a_week: int) -> int:
+        # Create a 2D list so we can save all the days and hours the group has a lesson
         timetable = [[]] * amount_of_days_in_a_week
 
+        # Loop through each lesson and save it into the array
         for lesson in self.lessons:
             timetable[lesson.day].append(lesson.hour)
 
+        # Loop through each day and check how many gap hours there are in that day
         amount = 0
         for day in timetable:
+            # Nothing there
             if day == None or len(day) == 0:
                 continue
 
+            # Sort the array so we can use it
             day.sort()
-            utils.uprint(
-                f"Calculating gap hours for day {day} for group {str(self)}")
             first = day[0]
             last = day[-1]
-            utils.uprint(f"Gap hours: {last - (first - 1) - len(day)}")
+            # Calculate the amount of gap hours
             amount += last - (first - 1) - len(day)
 
         return amount
@@ -100,33 +103,26 @@ class Timetable:
 
     def schedule_lesson(self, lesson: Lesson, skip_check=False) -> bool:
         # First we check if we are allowed to schedule this lesson
-        utils.uprint(f"Scheduling: {lesson}")
         if skip_check == False:
             if self.can_schedule(lesson) == False:
                 return False
 
         # Then we schedule the lesson
+        utils.uprint(f"Scheduling: {lesson}")
         self.lessons.append(lesson)
 
         # Then we add it to the group's lessons list
         for group in self.groups:
+            # Find the group
             if group.identifier == lesson.group.identifier:
                 group.lessons.append(lesson)
 
-        counter = 0
-
-        utils.uprint(f"Teacher to schedule: {lesson.teacher}")
-
         # Then we add it to the teacher's lessons list
         for teacher in self.teachers:
+            # Find the teacher
             if teacher.identifier == lesson.teacher.identifier:
-                counter += 1
-                utils.uprint(
-                    f"teacher: {teacher.identifier}, lesson teacher: {lesson.teacher.identifier}")
                 teacher.lessons.append(lesson)
                 break
-
-        utils.uprint(self.teachers[counter-1])
 
         return True
 
@@ -134,6 +130,7 @@ class Timetable:
         """Count all the gap hours in the timetable"""
         gap_hours = 0
 
+        # Loop through all the groups and count their gap hours
         for group in self.groups:
             gap_hours += group.count_gap_hours(self.amount_of_days_a_week)
 
@@ -141,7 +138,7 @@ class Timetable:
 
     def create_feasible_timetable(self) -> bool:
         """Create a valid timetable"""
-        lessons = []
+        self.lessons = []  # empty the lessons, to be sure
         for group in self.groups:
             for subject in group.subjects:
                 amount = 0
@@ -166,9 +163,8 @@ class Timetable:
                             if scheduled == amount:
                                 break
                             lesson = Lesson(
-                                len(self.lessons) - 1, t, group, hour, day)
+                                len(self.lessons) - 1, teacher, group, hour, day)
                             if self.schedule_lesson(lesson) == True:
-                                lessons.append(lesson)
                                 scheduled += 1
 
                 if scheduled != amount:
@@ -176,5 +172,4 @@ class Timetable:
                         f"[ERROR] could not schedule all lessons for subject: {subject}, group: name: {group.name}, year: {group.year}, id: {group.identifier}")
                     return False
 
-        self.lessons = lessons
         return True
