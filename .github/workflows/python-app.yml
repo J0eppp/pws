@@ -27,6 +27,9 @@ jobs:
         pipenv install
         pip install flake8 pytest
         # if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Open virtual env
+      run: |
+        pipenv shell
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
