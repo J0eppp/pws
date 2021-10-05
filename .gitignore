@@ -8,3 +8,5 @@ Pipfile.lock
 
 .vscode
 .venv
+
+.pytest_cache
