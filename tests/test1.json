@@ -1,0 +1,77 @@
+{
+    "subjectInformation": [
+        {
+            "subject": "Nederlands",
+            "year": 1,
+            "amount": 4
+        },
+        {
+            "subject": "Engels",
+            "year": 1,
+            "amount": 4
+        },
+        {
+            "subject": "Wiskunde",
+            "year": 1,
+            "amount": 3
+        }
+    ],
+    "groups": [
+        {
+            "identifier": 0,
+            "name": "1A",
+            "year": 1,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde"
+            ],
+            "lessons": []
+        },
+        {
+            "identifier": 1,
+            "name": "1B",
+            "year": 1,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde"
+            ],
+            "lessons": []
+        },
+        {
+            "identifier": 2,
+            "name": "1C",
+            "year": 1,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde"
+            ],
+            "lessons": []
+        }
+    ],
+    "teachers": [
+        {
+            "identifier": 0,
+            "name": "Teacher 1",
+            "subject": "Nederlands",
+            "lessons": []
+        },
+        {
+            "identifier": 1,
+            "name": "Teacher 2",
+            "subject": "Engels",
+            "lessons": []
+        },
+        {
+            "identifier": 2,
+            "name": "Teacher 3",
+            "subject": "Wiskunde",
+            "lessons": []
+        }
+    ],
+    "lessons": [],
+    "amountOfDaysAWeek": 5,
+    "amountOfHoursADay": 9
+}
