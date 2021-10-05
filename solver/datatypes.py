@@ -1,6 +1,6 @@
 from typing import List
 from dataclasses import dataclass
-import utils
+from . import utils
 
 
 @dataclass

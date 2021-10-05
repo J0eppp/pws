@@ -1,5 +1,5 @@
 import json
-from datatypes import Timetable, Group, Teacher, SubjectInformation
+from .datatypes import Timetable, Group, Teacher, SubjectInformation
 
 
 def parse_json_file(path: str) -> Timetable:
