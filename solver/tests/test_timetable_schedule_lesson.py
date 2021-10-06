@@ -1,11 +1,11 @@
-from solver.parser import parse_json_file
-from solver.datatypes import Timetable
+from ..parser import parse_json_file
+from ..datatypes import Timetable
 
 
 def test_timetable_schedule_lesson_1():
     # Test 1
     timetable: Timetable = parse_json_file(
-        "tests/test0.json")
+        "solver/tests/test0.json")
     assert len(timetable.groups) == 1
     assert len(timetable.teachers) == 1
     assert timetable.create_feasible_timetable() == True
@@ -16,7 +16,7 @@ def test_timetable_schedule_lesson_1():
 
 def test_timetable_schedule_lesson_2():
     # Test 2
-    timetable: Timetable = parse_json_file("tests/test1.json")
+    timetable: Timetable = parse_json_file("solver/tests/test1.json")
     assert len(timetable.groups) == 3
     assert len(timetable.teachers) == 3
     assert timetable.create_feasible_timetable() == True
