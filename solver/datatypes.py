@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Any
 from dataclasses import dataclass
 from . import utils
 # import utils
@@ -61,7 +61,7 @@ class Lesson(BaseType):
     group: Group
     day: int
     hour: int
-    scheduled = None
+    scheduled: Any
 
     def __str__(self) -> str:
         return f"D{self.day}H{self.hour} - G {self.group.name} T {self.teacher.name} subject {self.teacher.subject}"
@@ -139,7 +139,7 @@ class Timetable:
 
         return gap_hours
 
-    def create_feasible_timetable(self) -> bool:
+    def create_feasible_timetable(self, add_var, BINARY) -> bool:
         """Create a valid timetable"""
         self.lessons = []  # empty the lessons, to be sure
         for group in self.groups:
@@ -166,7 +166,7 @@ class Timetable:
                             if scheduled == amount:
                                 break
                             lesson = Lesson(
-                                len(self.lessons) - 1, teacher, group, day, hour)
+                                len(self.lessons) - 1, teacher, group, day, hour, add_var(var_type=BINARY))
                             if self.schedule_lesson(lesson) == True:
                                 scheduled += 1
 
