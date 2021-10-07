@@ -16,7 +16,8 @@ class LPSolver(Solver):
         return self.__solve()
 
     def __solve(self) -> Timetable:
-        utils.uprint(f"Feasible timetable: {self.timetable.create_feasible_timetable()}")
+        utils.uprint(
+            f"Feasible timetable: {self.timetable.create_feasible_timetable()}")
         utils.uprint(
             f"Amount of gap hours: {self.timetable.count_gap_hours()}")
         return self.timetable
