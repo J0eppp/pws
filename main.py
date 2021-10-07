@@ -1,10 +1,10 @@
 from argparse import ArgumentParser
 # from . import utils
-import utils
-from parser import parse_json_file
+import solver.utils as utils
+from solver.parser import parse_json_file
 import time
-from datatypes import Timetable
-from LPSolver import LPSolver
+from solver.datatypes import Timetable
+from solver.LPSolver import LPSolver
 
 SEPERATION_STRING = "-==================================-"
 
@@ -49,8 +49,6 @@ def main():
         solver = LPSolver(timetable)
 
     timetable = solver.solve()
-    # utils.uprint(timetable.lessons)
-    utils.uprint(f"Amount of lessons: {len(timetable.lessons)}")
 
 
 if __name__ == "__main__":

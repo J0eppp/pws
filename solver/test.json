@@ -14,6 +14,16 @@
             "subject": "Wiskunde",
             "year": 1,
             "amount": 3
+        },
+        {
+            "subject": "Duits",
+            "year": 1,
+            "amount": 2
+        },
+        {
+            "subject": "Frans",
+            "year": 1,
+            "amount": 3
         }
     ],
     "groups": [
@@ -23,7 +33,9 @@
             "subjects": [
                 "Nederlands",
                 "Engels",
-                "Wiskunde"
+                "Wiskunde",
+                "Duits",
+                "Frans"
             ],
             "lessons": []
         },
@@ -33,7 +45,9 @@
             "subjects": [
                 "Nederlands",
                 "Engels",
-                "Wiskunde"
+                "Wiskunde",
+                "Duits",
+                "Frans"
             ],
             "lessons": []
         },
@@ -43,7 +57,33 @@
             "subjects": [
                 "Nederlands",
                 "Engels",
-                "Wiskunde"
+                "Wiskunde",
+                "Duits",
+                "Frans"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "1D",
+            "year": 1,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Duits",
+                "Frans"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "1E",
+            "year": 1,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Duits",
+                "Frans"
             ],
             "lessons": []
         }
@@ -65,6 +105,18 @@
             "identifier": 2,
             "name": "Teacher 3",
             "subject": "Wiskunde",
+            "lessons": []
+        },
+        {
+            "identifier": 3,
+            "name": "Teacher 4",
+            "subject": "Duits",
+            "lessons": []
+        },
+        {
+            "identifier": 4,
+            "name": "Teacher 5",
+            "subject": "Frans",
             "lessons": []
         }
     ],

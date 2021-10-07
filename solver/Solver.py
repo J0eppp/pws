@@ -1,4 +1,4 @@
-from datatypes import Timetable
+from .datatypes import Timetable
 from dataclasses import dataclass
 from typing import Protocol
 

@@ -1,6 +1,7 @@
 from typing import List
 from dataclasses import dataclass
 from . import utils
+# import utils
 
 
 @dataclass
@@ -30,7 +31,8 @@ class Group(BaseType):
 
     def count_gap_hours(self, amount_of_days_in_a_week: int) -> int:
         # Create a 2D list so we can save all the days and hours the group has a lesson
-        timetable = [[]] * amount_of_days_in_a_week
+        # timetable = [[]] * amount_of_days_in_a_week
+        timetable = [[] for _ in range(amount_of_days_in_a_week)]
 
         # Loop through each lesson and save it into the array
         for lesson in self.lessons:
@@ -57,8 +59,9 @@ class Group(BaseType):
 class Lesson(BaseType):
     teacher: Teacher
     group: Group
-    hour: int
     day: int
+    hour: int
+    scheduled = None
 
     def __str__(self) -> str:
         return f"D{self.day}H{self.hour} - G {self.group.name} T {self.teacher.name} subject {self.teacher.subject}"
@@ -163,7 +166,7 @@ class Timetable:
                             if scheduled == amount:
                                 break
                             lesson = Lesson(
-                                len(self.lessons) - 1, teacher, group, hour, day)
+                                len(self.lessons) - 1, teacher, group, day, hour)
                             if self.schedule_lesson(lesson) == True:
                                 scheduled += 1
 
