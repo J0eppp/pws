@@ -1,7 +1,8 @@
+from itertools import combinations
 from .Solver import Solver
 from dataclasses import dataclass
 from .datatypes import Timetable, Lesson
-from mip import Model, MINIMIZE, BINARY, xsum
+from mip import Model, minimize, BINARY, xsum
 from . import utils
 import time
 
@@ -9,28 +10,53 @@ SEPERATION_STRING = "-==================================-"
 
 
 class LPSolver(Solver):
-    """The linear programming solver"""
-
     def __init__(self, timetable: Timetable):
         self.timetable = timetable
-        self.model = Model(sense=MINIMIZE)
+        self.model = Model("timetable")
         self.model.verbose = 0
 
     def solve(self) -> Timetable:
         return self.__solve()
 
     def __solve(self) -> Timetable:
-        # Create feasible timetable
+        # # Create feasible timetable
+        # utils.uprint(SEPERATION_STRING)
+        # utils.uprint("Creating feasible timetable")
+        # start_time = time.process_time()
+        # self.timetable.create_feasible_timetable(self.model.add_var, BINARY)
+        # end_time = time.process_time()
+        # utils.uprint("Done creating feasible timetable")
+        # utils.uprint(f"Scheduled {len(self.timetable.lessons)} lessons")
+        # utils.uprint(
+        #     f"Creating feasible schedule took {end_time - start_time} seconds")
+        # utils.uprint(SEPERATION_STRING)
+
+        # Create all possibilities
         utils.uprint(SEPERATION_STRING)
-        utils.uprint("Creating feasible timetable")
+        utils.uprint("Creating all possibilities")
         start_time = time.process_time()
-        self.timetable.create_feasible_timetable(self.model.add_var, BINARY)
+
+        S = []
+        for group in self.timetable.groups:
+            for subject in group.subjects:
+                for si in self.timetable.subject_information:
+                    if si.subject != subject:
+                        continue
+                    teacher = [
+                        teacher for teacher in self.timetable.teachers if teacher.subject == subject][0]
+                    for _ in range(si.amount):
+                        for day in range(self.timetable.amount_of_days_a_week):
+                            for hour in range(self.timetable.amount_of_hours_a_day):
+                                lesson = Lesson(
+                                    len(S) - 1, teacher, group, day, hour, self.model.add_var(BINARY))
+                                teacher.lessons.append(lesson)
+                                group.lessons.append(lesson)
+                                S.append(lesson)
+
         end_time = time.process_time()
-        utils.uprint("Done creating feasible timetable")
-        utils.uprint(f"Scheduled {len(self.timetable.lessons)} lessons")
+        utils.uprint(f"Created {len(S)} possibilities")
         utils.uprint(
-            f"Creating feasible schedule took {end_time - start_time} seconds")
-        utils.uprint(SEPERATION_STRING)
+            f"Creating all possibilities took {end_time - start_time} seconds")
 
         # Creating constraints
         nr_constraints = 0
@@ -50,6 +76,13 @@ class LPSolver(Solver):
                                    group and lesson.teacher == teacher]) == amount
                 nr_constraints += 1
 
+        # Making sure lessons do not conflict in the second constraint
+        for (lesson1, lesson2) in combinations(S, r=2):
+            if ((lesson1.group == lesson2.group or lesson1.teacher == lesson2.teacher) and (lesson1.day == lesson2.day and lesson1.hour == lesson2.hour)):
+                # Conflict, we can only use one of the lessons
+                self.model += lesson1.scheduled + lesson2.scheduled <= 1
+                nr_constraints += 1
+
         end_time = time.process_time()
         utils.uprint("Done creating constraints")
         utils.uprint(f"Created {nr_constraints} constraints")
@@ -57,12 +90,14 @@ class LPSolver(Solver):
             f"Creating constraints took {end_time - start_time} seconds")
         utils.uprint(SEPERATION_STRING)
 
-        # Optimizing
-        self.model.start = [(lesson.scheduled, 1.0)
-                            for lesson in self.timetable.lessons]
+        # # Optimizing
+        # self.model.start = [(lesson.scheduled, 1.0)
+        #                     for lesson in self.timetable.lessons]
 
         # Objective function
-        self.model.objective = self.timetable.count_gap_hours()
+        # self.model.objective = self.timetable.count_gap_hours()
+        self.model.objective = minimize(
+            xsum([group.count_gap_hours() for group in self.groups]))
 
         utils.uprint(SEPERATION_STRING)
         utils.uprint("Optimizing")

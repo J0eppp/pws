@@ -36,7 +36,7 @@ class Group(BaseType):
 
         # Loop through each lesson and save it into the array
         for lesson in self.lessons:
-            timetable[lesson.day].append(lesson.hour)
+            timetable[lesson.day].append(lesson)
 
         # Loop through each day and check how many gap hours there are in that day
         amount = 0
@@ -45,12 +45,18 @@ class Group(BaseType):
             if day == None or len(day) == 0:
                 continue
 
+            # Only use the hours with scheduled >= 0.99
+            selected_day = [
+                lesson for lesson in day if lesson.scheduled >= 0.99]
+
+            print(len(selected_day))
+
             # Sort the array so we can use it
-            day.sort()
-            first = day[0]
-            last = day[-1]
+            selected_day.sort(key=lambda x: x.hour)
+            first = selected_day[0].hour
+            last = selected_day[-1].hour
             # Calculate the amount of gap hours
-            amount += last - (first - 1) - len(day)
+            amount += last - (first - 1) - len(selected_day)
 
         return amount
 
