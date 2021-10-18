@@ -60,7 +60,9 @@ class LPSolver(Solver):
                     if subject_info.subject == teacher.subject and subject_info.year == group.year:
                         amount = subject_info.amount
                         break
-                self.model += xsum([1 for lesson in self.timetable.lessons if lesson.group ==
+                print(sum([1 for lesson in S if lesson.group ==
+                           group and lesson.teacher == teacher]))
+                self.model += xsum([1 for lesson in S if lesson.group ==
                                    group and lesson.teacher == teacher]) == amount
                 nr_constraints += 1
 
