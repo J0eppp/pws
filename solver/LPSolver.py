@@ -19,18 +19,6 @@ class LPSolver(Solver):
         return self.__solve()
 
     def __solve(self) -> Timetable:
-        # # Create feasible timetable
-        # utils.uprint(SEPERATION_STRING)
-        # utils.uprint("Creating feasible timetable")
-        # start_time = time.process_time()
-        # self.timetable.create_feasible_timetable(self.model.add_var, BINARY)
-        # end_time = time.process_time()
-        # utils.uprint("Done creating feasible timetable")
-        # utils.uprint(f"Scheduled {len(self.timetable.lessons)} lessons")
-        # utils.uprint(
-        #     f"Creating feasible schedule took {end_time - start_time} seconds")
-        # utils.uprint(SEPERATION_STRING)
-
         # Create all possibilities
         utils.uprint(SEPERATION_STRING)
         utils.uprint("Creating all possibilities")
@@ -90,14 +78,10 @@ class LPSolver(Solver):
             f"Creating constraints took {end_time - start_time} seconds")
         utils.uprint(SEPERATION_STRING)
 
-        # # Optimizing
-        # self.model.start = [(lesson.scheduled, 1.0)
-        #                     for lesson in self.timetable.lessons]
-
         # Objective function
         # self.model.objective = self.timetable.count_gap_hours()
         self.model.objective = minimize(
-            xsum([group.count_gap_hours() for group in self.groups]))
+            xsum([group.count_gap_hours() for group in self.timetable.groups]))
 
         utils.uprint(SEPERATION_STRING)
         utils.uprint("Optimizing")
