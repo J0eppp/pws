@@ -81,7 +81,7 @@ class LPSolver(Solver):
         # Objective function
         # self.model.objective = self.timetable.count_gap_hours()
         self.model.objective = minimize(
-            xsum([group.count_gap_hours() for group in self.timetable.groups]))
+            xsum([group.count_gap_hours(self.timetable.amount_of_days_a_week) for group in self.timetable.groups]))
 
         utils.uprint(SEPERATION_STRING)
         utils.uprint("Optimizing")
