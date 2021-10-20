@@ -14,8 +14,10 @@ def main():
     parser.add_argument("-s", "--solver", type=str,
                         help="Select the linear programming solver")
     parser.add_argument("-d", "--data", type=str, help="Select the JSON file")
+    parser.add_argument("--save", type=str, help="Where to save the model")
     args = parser.parse_args()
     data_file = args.data
+    save_file = args.save
 
     # Parse the CLI arguments
     if data_file == None:
@@ -49,6 +51,16 @@ def main():
         solver = LPSolver(timetable)
 
     timetable = solver.solve()
+
+    if save_file:
+        utils.uprint(SEPERATION_STRING)
+        utils.uprint(f"Saving the model to: {save_file}")
+        start_time = time.process_time()
+        solver.model.write(save_file)
+        end_time = time.process_time()
+        utils.uprint("Done saving the model")
+        utils.uprint(f"Saving the model took {end_time - start_time} seconds")
+        utils.uprint(SEPERATION_STRING)
 
 
 if __name__ == "__main__":
