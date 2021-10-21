@@ -89,7 +89,6 @@ class Lesson(BaseType):
     day: int
     hour: int
     subj_info: 'SubjectInformation'
-    scheduled: Any
 
 
     def __str__(self) -> str:

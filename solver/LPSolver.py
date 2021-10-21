@@ -45,10 +45,10 @@ class LPSolver(Solver):
                         for day in range(self.timetable.amount_of_days_a_week):
                             for hour in range(self.timetable.amount_of_hours_a_day):
                                 lesson = Lesson(
-                                    len(S) - 1, teacher, group, day, hour, si, self.model.add_var(BINARY))
+                                    len(S) - 1, teacher, group, day, hour, si)
                                 # teacher.lessons.append(lesson)
                                 # group.lessons.append(lesson)
-                                S.append(lesson)
+                                S.append((lesson, self.model.add_var(var_type=BINARY)))
 
         end_time = time.process_time()
         utils.uprint(f"Created {len(S)} possibilities")
@@ -72,15 +72,15 @@ class LPSolver(Solver):
                 # print(sum([1 for lesson in S if lesson.group ==
                 #            group and lesson.teacher == teacher]))
                 #print("I'm here!!!!! MAKING CONSTRAINT YAY")
-                self.model += xsum([lesson.scheduled for lesson in S if lesson.group ==
+                self.model += xsum([var for (lesson, var) in S if lesson.group ==
                                    group and lesson.teacher == teacher]) == amount
                 nr_constraints += 1
 
         # Making sure lessons do not conflict in the second constraint
-        for (lesson1, lesson2) in combinations(S, r=2):
+        for ((lesson1, var1), (lesson2, var2)) in combinations(S, r=2):
             if ((lesson1.group == lesson2.group or lesson1.teacher == lesson2.teacher) and (lesson1.day == lesson2.day and lesson1.hour == lesson2.hour)):
                 # Conflict, we can only use one of the lessons
-                self.model += lesson1.scheduled + lesson2.scheduled <= 1
+                self.model += var1 + var2 <= 1
                 nr_constraints += 1
 
         [print(constr.expr) for constr in self.model.constrs[0:15]]
@@ -92,22 +92,22 @@ class LPSolver(Solver):
         utils.uprint(SEPERATION_STRING)
 
         # Objective function
-        self.model.objective = self.timetable.count_gap_hours()
-        self.model.objective = minimize(
-            xsum([group.count_gap_hours(self.timetable.amount_of_days_a_week)
-                 for group in groups])
-        )
-        # print(S)
-        # self.model.objective = maximize(
-        #     xsum(lesson.scheduled for lesson in S)
+        # self.model.objective = self.timetable.count_gap_hours()
+        # self.model.objective = minimize(
+        #     xsum([group.count_gap_hours(self.timetable.amount_of_days_a_week)
+        #          for group in groups])
         # )
+        # print(S)
+        self.model.objective = maximize(
+            xsum([var for (_, var) in S])
+        )
 
         utils.uprint(SEPERATION_STRING)
         utils.uprint("Optimizing")
         start_time = time.process_time()
         print(self.model.optimize())
         selected = [
-            lesson for lesson in S if lesson.scheduled.x >= 0.99]
+            lesson for (lesson, var) in S if var.x >= 0.99]
 
         #[print(f" X-value: {lesson.scheduled.x}") for lesson in S]
 
