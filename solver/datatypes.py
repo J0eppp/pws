@@ -57,6 +57,9 @@ class Group(BaseType):
             last = day[-1].hour
             # Calculate the amount of gap hours
             amounts.append(last - (first - 1) - len(day))
+            print(f"len(day): {len(day)}")
+            print(f"amount: {amounts[-1]}")
+        print(f"amounts: {sum(amounts)}")
         return xsum(amounts)
 
     def select_lessons(self):
