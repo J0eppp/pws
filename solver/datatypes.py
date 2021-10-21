@@ -20,7 +20,8 @@ class Teacher(BaseType):
         return f"{self.name}, subject: {self.subject}"
 
     def select_lessons(self):
-        self.lessons = [lesson for lesson in self.lessons if lesson.scheduled.x >= 0.99]
+        self.lessons = [
+            lesson for lesson in self.lessons if lesson.scheduled.x >= 0.99]
 
 
 @dataclass
@@ -35,24 +36,13 @@ class Group(BaseType):
 
     def count_gap_hours(self, amount_of_days_in_a_week: int) -> int:
         # Create a 2D list so we can save all the days and hours the group has a lesson
-        # timetable = [[]] * amount_of_days_in_a_week
-
-        penalty = {
-            0 : 0,
-            1 : 1,
-            2 : 1,
-            3 : 4,
-            4 : 4,
-            5 : 3,
-            6 : 1,
-            7 : 1,
-            8 : 0,
-        }
         timetable = [[] for _ in range(amount_of_days_in_a_week)]
 
         # Loop through each lesson and save it into the array
         for lesson in self.lessons:
-            timetable[lesson.day].append(lesson)
+            # Only if it's selected
+            if lesson.scheduled >= 0.99:
+                timetable[lesson.day].append(lesson)
 
         # Loop through each day and check how many gap hours there are in that day
         amounts = []
@@ -61,25 +51,17 @@ class Group(BaseType):
             if day == None or len(day) == 0:
                 continue
 
-            # Only use the hours with scheduled >= 0.99
-            amounts.append(xsum([(1 - lesson.scheduled) * penalty[lesson.hour] for lesson in day]))
-            #amounts.append(8 - xsum([lesson.scheduled for lesson in day]))
-            #[print(lesson.scheduled.ub) for lesson in day]
-            # [print(lesson.scheduled) for lesson in day]
-            # #print(len(selected_day))
-
-            # # Sort the array so we can use it
-            # selected_day.sort(key=lambda x: x.hour)
-            # first = selected_day[0].hour
-            # last = selected_day[-1].hour
-            # # Calculate the amount of gap hours
-            # amounts.append(last - (first - 1) - len(selected_day))
-            #[print(amount) for amount in amounts]
-        #print(xsum(amounts))
+            # Sort the array so we can use it
+            day.sort(key=lambda x: x.hour)
+            first = day[0].hour
+            last = day[-1].hour
+            # Calculate the amount of gap hours
+            amounts.append(last - (first - 1) - len(day))
         return xsum(amounts)
-    
+
     def select_lessons(self):
-        self.lessons = [lesson for lesson in self.lessons if lesson.scheduled.x >= 0.99]
+        self.lessons = [
+            lesson for lesson in self.lessons if lesson.scheduled.x >= 0.99]
 
 
 @dataclass
@@ -89,7 +71,7 @@ class Lesson(BaseType):
     day: int
     hour: int
     subj_info: 'SubjectInformation'
-
+    scheduled: Any
 
     def __str__(self) -> str:
         return f"D{self.day}H{self.hour} - G {self.group.name} T {self.teacher.name} subject {self.teacher.subject}"
