@@ -34,33 +34,43 @@ class Group(BaseType):
     def __str__(self) -> str:
         return f"{self.name}"
 
-    def count_gap_hours(self, amount_of_days_in_a_week: int) -> int:
+    def count_gap_hours(self, amount_of_days_in_a_week: int, amount_of_hours_a_day: int) -> int:
         # Create a 2D list so we can save all the days and hours the group has a lesson
         timetable = [[] for _ in range(amount_of_days_in_a_week)]
 
-        # Loop through each lesson and save it into the array
-        for lesson in self.lessons:
-            # Only if it's selected
-            if lesson.scheduled >= 0.99:
-                timetable[lesson.day].append(lesson)
-
-        # Loop through each day and check how many gap hours there are in that day
         amounts = []
-        for day in timetable:
-            # Nothing there
-            if day == None or len(day) == 0:
-                continue
 
-            # Sort the array so we can use it
-            day.sort(key=lambda x: x.hour)
-            first = day[0].hour
-            last = day[-1].hour
-            # Calculate the amount of gap hours
-            amounts.append(last - (first - 1) - len(day))
-            print(f"len(day): {len(day)}")
-            print(f"amount: {amounts[-1]}")
-        print(f"amounts: {sum(amounts)}")
+        for day in range(amount_of_days_in_a_week):
+            for hour in range(amount_of_hours_a_day):
+                lessons = self.get_lessons(hour)
+                timetable[day].append([lesson.scheduled for lesson in lessons])
+
+            first = 0
+            last = 0
+
+            for i in range(len(timetable[day]) - 1, 0, -1):
+                hour: List["Lesson"] = timetable[day][i]
+                # We check if first > i and then if there is a lesson scheduled on this hour
+                if first > i and xsum(hour) * i != 0:
+                    first = i
+
+            for i in range(len(timetable[day])):
+                hour: List["Lesson"] = timetable[day][i]
+                # We check first if last < i and then if there is a lesson scheduled on this hour
+                utils.uprint(xsum(hour) >= 0.99)
+                if last < i and xsum(hour) * i != 0:
+                    last = i
+
+            utils.uprint(f"First: {first}")
+            utils.uprint(f"Last: {last}")
+
+            amounts.append(last - (first - 1) -
+                           xsum([lesson.scheduled for lesson in lessons]))
+
         return xsum(amounts)
+
+    def get_lessons(self, hour) -> List["Lesson"]:
+        return [lesson for lesson in self.lessons if lesson.hour == hour]
 
     def select_lessons(self):
         self.lessons = [
