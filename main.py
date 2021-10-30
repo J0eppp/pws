@@ -5,6 +5,7 @@ from solver.parser import parse_json_file
 import time
 from solver.datatypes import Timetable
 from solver.LPSolver import LPSolver
+from solver.GCSolver import GCSolver
 
 SEPERATION_STRING = "-==================================-"
 
@@ -15,6 +16,8 @@ def main():
                         help="Select the linear programming solver")
     parser.add_argument("-d", "--data", type=str, help="Select the JSON file")
     parser.add_argument("--save", type=str, help="Where to save the model")
+    parser.add_argument("--display", action="store_true",
+                        help="Display the graph (when using the GC sovler)")
     args = parser.parse_args()
     data_file = args.data
     save_file = args.save
@@ -29,6 +32,7 @@ def main():
         utils.uprint("Please specify a solving method")
         utils.uprint("Available solving methods:")
         utils.uprint("    1. Linear programming (lp)")
+        utils.uprint("    2. Graph colouring (gc)")
         return
 
     # Read and parse the file with all the data
@@ -49,18 +53,25 @@ def main():
     # Select solver
     if args.solver == "lp":
         solver = LPSolver(timetable)
+    elif args.solver == "gc":
+        display = False
+        if args.display != None:
+            display = args.display
+        solver = GCSolver(timetable, display=display)
 
     timetable = solver.solve()
 
     if save_file:
-        utils.uprint(SEPERATION_STRING)
-        utils.uprint(f"Saving the model to: {save_file}")
-        start_time = time.process_time()
-        solver.model.write(save_file)
-        end_time = time.process_time()
-        utils.uprint("Done saving the model")
-        utils.uprint(f"Saving the model took {end_time - start_time} seconds")
-        utils.uprint(SEPERATION_STRING)
+        if args.solver == "lp":
+            utils.uprint(SEPERATION_STRING)
+            utils.uprint(f"Saving the model to: {save_file}")
+            start_time = time.process_time()
+            solver.model.write(save_file)
+            end_time = time.process_time()
+            utils.uprint("Done saving the model")
+            utils.uprint(
+                f"Saving the model took {end_time - start_time} seconds")
+            utils.uprint(SEPERATION_STRING)
 
 
 if __name__ == "__main__":
