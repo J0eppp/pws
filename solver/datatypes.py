@@ -169,9 +169,11 @@ class Timetable:
             for subject in group.subjects:
                 amount = 0
                 scheduled = 0
+                si = None
                 for subject_info in self.subject_information:
                     if subject_info.subject == subject and subject_info.year == group.year:
                         amount = subject_info.amount
+                        si = subject_info
                         break
                 teacher = None
                 for t in self.teachers:
@@ -189,7 +191,7 @@ class Timetable:
                             if scheduled == amount:
                                 break
                             lesson = Lesson(
-                                len(self.lessons) - 1, teacher, group, day, hour, add_var(var_type=BINARY))
+                                len(self.lessons) - 1, teacher, group, day, hour, si, add_var(var_type=BINARY))
                             if self.schedule_lesson(lesson) == True:
                                 scheduled += 1
 
