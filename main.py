@@ -57,7 +57,7 @@ def main():
         display = False
         if args.display != None:
             display = args.display
-        solver = GCSolver(timetable, display=display)
+        solver = GCSolver(timetable, display=display, save=save_file)
 
     timetable = solver.solve()
 
@@ -72,6 +72,15 @@ def main():
             utils.uprint(
                 f"Saving the model took {end_time - start_time} seconds")
             utils.uprint(SEPERATION_STRING)
+        # elif args.solver == "gc":
+        #     utils.uprint(SEPERATION_STRING)
+        #     utils.uprint(f"Saving the graph to: {save_file}")
+        #     start_time = time.process_time()
+        #     solver.fig.savefig(save_file, format="svg", dpi=1200)
+        #     end_time = time.process_time()
+        #     utils.uprint("Done saving the graph")
+        #     utils.uprint(
+        #         f"Saving the graph took {end_time - start_time} seconds")
 
 
 if __name__ == "__main__":

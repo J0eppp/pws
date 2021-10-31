@@ -5,20 +5,27 @@ import matplotlib.colors as mcolors
 from itertools import combinations
 from random import shuffle
 from time import process_time
+from math import floor
 
 from .Solver import Solver
 from .datatypes import Timetable, Lesson
 from .utils import uprint
+from .Prettyprint import pretty_print
 
 
 SEPERATION_STRING = "-==================================-"
 
 
 class GCSolver(Solver):
-    def __init__(self, timetable: Timetable, display=False):
+    def __init__(self, timetable: Timetable, display=False, save=None):
         self.timetable = timetable
         self.network = nx.Graph()
         self.display = display
+        self.save = save
+        # fig, ax = plt.subplots()
+        # self.fig = fig
+        # self.fig = None
+        self.fig = plt
 
     def solve(self) -> Timetable:
         return self.__solve()
@@ -96,7 +103,7 @@ class GCSolver(Solver):
         # colours = list(
         #     set(list(mcolors.CSS4_COLORS.keys())) | set(list(mcolors.BASE_COLORS.keys())))
         colours = list(mcolors.CSS4_COLORS.keys())
-        colours = colours[0:max(dict(self.network.degree).values())]
+        colours = colours[0:max(dict(self.network.degree).values())][0:45]
 
         hours = range(45)
         calendar = {}
@@ -104,7 +111,7 @@ class GCSolver(Solver):
             calendar[hour] = []
 
         # Map each color to an hour
-        # from_color_to_hour = {col: hours[i] for i, col, in enumerate(colours)}
+        from_color_to_hour = {col: hours[i] for i, col, in enumerate(colours)}
 
         uprint(SEPERATION_STRING)
         uprint("Running the greedy algorithm to give the nodes a colour")
@@ -151,13 +158,46 @@ class GCSolver(Solver):
         uprint(f"The graph has {len(self.network.edges)} edges")
         uprint(SEPERATION_STRING)
 
-        if self.display == True:
-            # Draw it
-            node_colours = [data["color"]
-                            for v, data in self.network.nodes(data=True)]
+        for v, data in self.network.nodes(data=True):
+            calendar[from_color_to_hour[data['color']]].append(v)
 
-            subax1 = plt.subplot()
-            pos = nx.spring_layout(self.network, k=0.75)
-            nx.draw_networkx(self.network, pos, with_labels=True,
-                             node_color=node_colours)
+        # uprint(calendar)
+        # for hour in calendar:
+        #     for l in calendar[hour]:
+        #         lesson = lessons[l]
+        #         lesson.hour = l % 9
+        #         lesson.day = floor(l / 9)
+        #         if lesson.day == 5:
+        #             print(f"Hour: {hour}, lesson.hour: {lesson.hour}")
+        #         self.timetable.schedule_lesson(lesson)
+
+        # uprint([str(lesson)
+        #        for lesson in self.timetable.groups[2].lessons if lesson.day == 5])
+
+        pretty_print(self.timetable)
+
+        # Draw everything
+        node_colours = [data["color"]
+                        for v, data in self.network.nodes(data=True)]
+
+        pos = nx.spring_layout(self.network, k=0.75)
+        nx.draw_networkx(self.network, pos, with_labels=True,
+                         node_color=node_colours)
+
+        if self.display == True:
+            # Display
             plt.show()
+
+        if self.save != None:
+            uprint(SEPERATION_STRING)
+            uprint(f"Saving the graph to: {self.save}")
+            plt.axis('off')
+            plt.gca().set_position([0, 0, 1, 1])
+            start_time = process_time()
+            plt.savefig(self.save, format="svg", dpi=600)
+            end_time = process_time()
+            uprint("Done saving the graph")
+            uprint(
+                f"Saving the graph took {end_time - start_time} seconds")
+
+        return self.timetable

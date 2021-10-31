@@ -12,3 +12,4 @@ Pipfile.lock
 .pytest_cache
 
 model.lp
+*.svg
