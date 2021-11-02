@@ -1,13 +1,23 @@
 import PySimpleGUI as sg
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from os.path import exists
 from copy import deepcopy
+import threading
 
 from solver import LPSolver
+from solver.GCSolverGUI import GCSolverGUI
 
 from .parser import parse_json_file
 from .datatypes import Timetable
 from .GCSolver import GCSolver
 from .LPSolver import LPSolver
+
+
+def draw_figure(canvas, figure, loc=(0, 0)):
+    figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
+    figure_canvas_agg.draw()
+    figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
+    return figure_canvas_agg
 
 
 class GUI:
@@ -30,35 +40,27 @@ class GUI:
             [sg.Text(size=(40, 1), key="-AMOUNTOFSUBJECTS-")]
         ]
         start_column = [
-            [sg.Column(config_column)]
+            [sg.Column(config_column), sg.VSeperator(), sg.Column(info_column)]
         ]
-        solver_column = [
-            [sg.Text("Drawing")]
-        ]
-        self.layout = [
-            [sg.Column(start_column, key="-START_COLUMN-")],
-            [sg.Column(solver_column, key="-SOLVER_COLUMN-", visible=False)]
-        ]
+        self.layout = start_column
         self.window = sg.Window(
             "PWS roosteralgoritmes - Joep van Dijk & Sam Staijen", self.layout, margins=(200, 100), resizable=True).Finalize()
 
         self.timetable: Timetable = None
         self.solvers = []
-        self.threads = []
-
-    def draw_gc_solver(self, solver: GCSolver):
-        return sg.Text("GC Solver")
+        self.guis = []
 
     def run(self):
         while True:
-            event, values = self.window.read()
-            if event == sg.WIN_CLOSED:
-                break
+            # event, values = self.window.read()
+            window, event, values = sg.read_all_windows()
 
             def parse_file():
                 # Parse the file
                 file_path = values["-FILENAME-"]
                 # Check if a filename was given
+                if file_path == None:
+                    return
                 if len(file_path) == 0:
                     # Nope, no file was given
                     sg.popup_error("Please enter a file")
@@ -74,7 +76,6 @@ class GUI:
                     # Everything is fine
                     # Parse the file
                     self.timetable = parse_json_file(file_path)
-                    print(self.timetable)
                     # Display data on the screen
                     self.window["-AMOUNTOFDAYSAWEEK-"].update(
                         f"Amount of days a week: {self.timetable.amount_of_days_a_week}")
@@ -87,32 +88,38 @@ class GUI:
                     self.window["-AMOUNTOFSUBJECTS-"].update(
                         f"Amount of subjects: {len(self.timetable.subject_information)}")
 
-            if event == "Run" or "-PRELOADFILE-":
+            if event == sg.WIN_CLOSED:
+                if window == self.window:
+                    # Close all other windows and kill all threads
+                    for gui in self.guis:
+                        gui.window.close()
+                    break
+                else:
+                    for gui in self.guis:
+                        if gui.window == window:
+                            gui.window.close()
+                            self.guis.remove(gui)
+
+            elif event == "-PRELOADFILE-":
                 parse_file()
 
-            if event == "Run":
-                # Run the algorithm
+            elif event == "Run":
+                # Create the windows necessary
                 if self.timetable == None:
                     # The file was not preloaded, parse it now
                     parse_file()
 
                 if values["-GCSOLVER-"] == True:
+                    # Start a new window with a GCSolver
                     timetable: Timetable = deepcopy(self.timetable)
                     solver = GCSolver(timetable)
                     self.solvers.append(solver)
+                    gui = GCSolverGUI(solver)
+                    self.guis.append(gui)
                 if values["-LPSOLVER-"] == True:
                     timetable: Timetable = deepcopy(self.timetable)
                     solver = LPSolver(timetable)
                     self.solvers.append(solver)
-
-                # self.window["-CONFIG_COLUMN-"].update(visible=False)
-                # self.window["-INFO_COLUMN-"].update(visible=False)
-                self.window["-START_COLUMN-"].update(visible=False)
-                self.window["-SOLVER_COLUMN-"].update(visible=True)
-
-                if len(self.solvers) == 1:
-                    # We only have to draw one thing
-                    # if values["-GCSOLVER-"] == True:
-                    pass
+                    # Start a new window with a LPSolver
 
         self.window.close()
