@@ -27,6 +27,8 @@ class GCSolver(Solver):
         # self.fig = None
         self.fig = plt
 
+        self.node_colours = None
+
     def solve(self) -> Timetable:
         return self.__solve()
 
@@ -177,15 +179,14 @@ class GCSolver(Solver):
         pretty_print(self.timetable)
 
         # Draw everything
-        node_colours = [data["color"]
-                        for v, data in self.network.nodes(data=True)]
-
-        pos = nx.spring_layout(self.network, k=0.75)
-        nx.draw_networkx(self.network, pos, with_labels=True,
-                         node_color=node_colours)
+        self.node_colours = [data["color"]
+                             for v, data in self.network.nodes(data=True)]
 
         if self.display == True:
             # Display
+            pos = nx.spring_layout(self.network, k=0.75)
+            nx.draw_networkx(self.network, pos, with_labels=True,
+                             node_color=self.node_colours)
             plt.show()
 
         if self.save != None:

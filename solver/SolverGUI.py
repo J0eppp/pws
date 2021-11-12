@@ -15,4 +15,4 @@ class SolverGUI:
             [sg.Canvas(key="-CANVAS-")]
         ]
         self.window = sg.Window(
-            f"PWS roosteralgoritmes - {self.alg_type}", layout, size=(200, 100), resizable=True, finalize=True)
+            f"PWS roosteralgoritmes - {self.alg_type}", layout, size=(1080, 720), resizable=True, finalize=True)
