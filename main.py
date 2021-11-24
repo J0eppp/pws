@@ -41,9 +41,9 @@ def main():
         # Read and parse the file with all the data
         utils.uprint(SEPERATION_STRING)
         utils.uprint("Reading and parsing the file....")
-        start_time = time.process_time()
+        start_time = time.time()
         timetable: Timetable = parse_json_file(data_file)
-        end_time = time.process_time()
+        end_time = time.time()
         utils.uprint("Done reading and parsing the file")
         utils.uprint(
             f"Reading and parsing the file took {end_time - start_time} seconds")
@@ -68,9 +68,9 @@ def main():
             if args.solver == "lp":
                 utils.uprint(SEPERATION_STRING)
                 utils.uprint(f"Saving the model to: {save_file}")
-                start_time = time.process_time()
+                start_time = time.time()
                 solver.model.write(save_file)
-                end_time = time.process_time()
+                end_time = time.time()
                 utils.uprint("Done saving the model")
                 utils.uprint(
                     f"Saving the model took {end_time - start_time} seconds")
@@ -78,9 +78,9 @@ def main():
         # elif args.solver == "gc":
         #     utils.uprint(SEPERATION_STRING)
         #     utils.uprint(f"Saving the graph to: {save_file}")
-        #     start_time = time.process_time()
+        #     start_time = time.time()
         #     solver.fig.savefig(save_file, format="svg", dpi=1200)
-        #     end_time = time.process_time()
+        #     end_time = time.time()
         #     utils.uprint("Done saving the graph")
         #     utils.uprint(
         #         f"Saving the graph took {end_time - start_time} seconds")
@@ -91,9 +91,9 @@ def main():
 
 
 if __name__ == "__main__":
-    start_time = time.process_time()
+    start_time = time.time()
     main()
-    end_time = time.process_time()
+    end_time = time.time()
     utils.uprint(SEPERATION_STRING)
     utils.uprint(f"Total execution time is {end_time - start_time} seconds")
     utils.uprint(SEPERATION_STRING)

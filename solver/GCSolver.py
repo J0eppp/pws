@@ -4,7 +4,7 @@ import matplotlib.colors as mcolors
 
 from itertools import combinations
 from random import shuffle
-from time import process_time
+from time import time
 from math import floor
 
 from .Solver import Solver
@@ -22,9 +22,6 @@ class GCSolver(Solver):
         self.network = nx.Graph()
         self.display = display
         self.save = save
-        # fig, ax = plt.subplots()
-        # self.fig = fig
-        # self.fig = None
         self.fig = plt
 
         self.node_colours = None
@@ -35,7 +32,7 @@ class GCSolver(Solver):
     def __solve(self) -> Timetable:
         uprint(SEPERATION_STRING)
         uprint("Sorting data")
-        start_time = process_time()
+        start_time = time()
 
         # Create a dictionary for the subject information
         subject_information = {}
@@ -48,7 +45,7 @@ class GCSolver(Solver):
         for teacher in self.timetable.teachers:
             teachers.update({f"{teacher.subject}": teacher})
 
-        end_time = process_time()
+        end_time = time()
 
         uprint("Done sorting data")
         uprint(f"Sorting data took {end_time - start_time} seconds")
@@ -59,7 +56,7 @@ class GCSolver(Solver):
 
         uprint(SEPERATION_STRING)
         uprint("Creating all necessary lesson objects")
-        start_time = process_time()
+        start_time = time()
 
         # Create all necessary lessons
         for group in self.timetable.groups:
@@ -70,7 +67,7 @@ class GCSolver(Solver):
                         Lesson(len(lessons), teachers[si.subject], group, None, None, si, 0))
                     labels.update({len(lessons) - 1: si.subject})
 
-        end_time = process_time()
+        end_time = time()
         uprint("Done creating lesson objects")
         uprint(f"Creating lesson objects took {end_time - start_time} seconds")
         uprint(SEPERATION_STRING)
@@ -78,12 +75,12 @@ class GCSolver(Solver):
         # Add all the nodes to the network
         uprint(SEPERATION_STRING)
         uprint("Adding nodes to the network")
-        start_time = process_time()
+        start_time = time()
 
         self.network.add_nodes_from(
             [lesson.identifier for lesson in lessons])
 
-        end_time = process_time()
+        end_time = time()
         uprint(
             f"Adding nodes to the network took {end_time - start_time} seconds")
         uprint(SEPERATION_STRING)
@@ -91,13 +88,13 @@ class GCSolver(Solver):
         # Create connections
         uprint(SEPERATION_STRING)
         uprint("Creating connections in the network")
-        start_time = process_time()
+        start_time = time()
 
         for (l1, l2) in combinations(lessons, 2):
             if l1.group == l2.group or l1.teacher == l2.teacher:
                 self.network.add_edge(l1.identifier, l2.identifier)
 
-        end_time = process_time()
+        end_time = time()
         uprint("Done creating connections")
         uprint(f"Creating connections took {end_time - start_time} seconds")
         uprint(SEPERATION_STRING)
@@ -117,7 +114,7 @@ class GCSolver(Solver):
 
         uprint(SEPERATION_STRING)
         uprint("Running the greedy algorithm to give the nodes a colour")
-        start_time = process_time()
+        start_time = time()
 
         # Greedy algorithm
         nodes = list(self.network.nodes())
@@ -146,7 +143,7 @@ class GCSolver(Solver):
         node_colours = [data["color"]
                         for _, data in self.network.nodes(data=True)]
 
-        end_time = process_time()
+        end_time = time()
         uprint("The greedy algorithm is done")
         uprint(f"The greedy algorithm took {end_time - start_time} seconds")
         uprint(SEPERATION_STRING)
@@ -162,19 +159,6 @@ class GCSolver(Solver):
 
         for v, data in self.network.nodes(data=True):
             calendar[from_color_to_hour[data['color']]].append(v)
-
-        # uprint(calendar)
-        # for hour in calendar:
-        #     for l in calendar[hour]:
-        #         lesson = lessons[l]
-        #         lesson.hour = l % 9
-        #         lesson.day = floor(l / 9)
-        #         if lesson.day == 5:
-        #             print(f"Hour: {hour}, lesson.hour: {lesson.hour}")
-        #         self.timetable.schedule_lesson(lesson)
-
-        # uprint([str(lesson)
-        #        for lesson in self.timetable.groups[2].lessons if lesson.day == 5])
 
         pretty_print(self.timetable)
 
@@ -194,9 +178,9 @@ class GCSolver(Solver):
             uprint(f"Saving the graph to: {self.save}")
             plt.axis('off')
             plt.gca().set_position([0, 0, 1, 1])
-            start_time = process_time()
+            start_time = time()
             plt.savefig(self.save, format="svg", dpi=600)
-            end_time = process_time()
+            end_time = time()
             uprint("Done saving the graph")
             uprint(
                 f"Saving the graph took {end_time - start_time} seconds")

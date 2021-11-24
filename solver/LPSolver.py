@@ -23,7 +23,7 @@ class LPSolver(Solver):
         # Create all possibilities
         utils.uprint(SEPERATION_STRING)
         utils.uprint("Creating all possibilities")
-        start_time = time.process_time()
+        start_time = time.time()
 
         groups = self.timetable.groups
         teachers = self.timetable.teachers
@@ -47,7 +47,7 @@ class LPSolver(Solver):
                                 group.lessons.append(lesson)
                                 S.append(lesson)
 
-        end_time = time.process_time()
+        end_time = time.time()
         utils.uprint(f"Created {len(S)} possibilities")
         utils.uprint(
             f"Creating all possibilities took {end_time - start_time} seconds")
@@ -56,7 +56,7 @@ class LPSolver(Solver):
         nr_constraints = 0
         utils.uprint(SEPERATION_STRING)
         utils.uprint("Creating constraints")
-        start_time = time.process_time()
+        start_time = time.time()
 
         # The first constraint makes sure that a lesson should be scheduled a specific amount of times
         for group in groups:
@@ -77,7 +77,7 @@ class LPSolver(Solver):
                 self.model += lesson1.scheduled + lesson2.scheduled <= 1
                 nr_constraints += 1
 
-        end_time = time.process_time()
+        end_time = time.time()
         utils.uprint("Done creating constraints")
         utils.uprint(f"Created {nr_constraints} constraints")
         utils.uprint(
@@ -98,9 +98,9 @@ class LPSolver(Solver):
 
         utils.uprint(SEPERATION_STRING)
         utils.uprint("Optimizing")
-        start_time = time.process_time()
+        start_time = time.time()
         print(self.model.optimize())
-        end_time = time.process_time()
+        end_time = time.time()
         utils.uprint("Done optimizing")
         utils.uprint(f"Optimizing took {end_time - start_time} seconds")
         utils.uprint(SEPERATION_STRING)
