@@ -5,6 +5,7 @@
         }
     ],
     "settings": {
+        "python.pythonPath": ".venv/bin/python"
         // "terminal.integrated.env.linux": {
         //     "path": "/home/joep/.local/share/virtualenvs/pws-MaaTjCmK"
         // },

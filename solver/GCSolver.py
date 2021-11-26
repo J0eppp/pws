@@ -176,10 +176,12 @@ class GCSolver(Solver):
         if self.save != None:
             uprint(SEPERATION_STRING)
             uprint(f"Saving the graph to: {self.save}")
-            plt.axis('off')
-            plt.gca().set_position([0, 0, 1, 1])
+            self.fig.axis('off')
+            self.fig.gca().set_position([0, 0, 1, 1])
             start_time = time()
-            plt.savefig(self.save, format="svg", dpi=600)
+            # plt.savefig(self.save, format="svg", dpi=600)
+            # self.fig.savefig(self.save, format=str(self.save).split(".")[-1], dpi=600)
+            self.fig.savefig(self.save)
             end_time = time()
             uprint("Done saving the graph")
             uprint(

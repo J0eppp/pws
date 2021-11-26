@@ -3,7 +3,6 @@ import time
 
 import solver.utils as utils
 from solver.parser import parse_json_file
-from solver.GUI import GUI
 from solver.datatypes import Timetable
 from solver.LPSolver import LPSolver
 from solver.GCSolver import GCSolver
@@ -86,6 +85,7 @@ def main():
         #         f"Saving the graph took {end_time - start_time} seconds")
 
     if args.gui == True:
+        from solver.GUI import GUI
         gui = GUI(args)
         gui.run()
 

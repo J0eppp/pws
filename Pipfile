@@ -8,6 +8,7 @@ mip = "*"
 networkx = "*"
 matplotlib = "*"
 pysimplegui = "*"
+tk = "*"
 
 [dev-packages]
 autopep8 = "*"
