@@ -57,12 +57,12 @@ class Group(BaseType):
             for i in range(len(timetable[day])):
                 hour: List["Lesson"] = timetable[day][i]
                 # We check first if last < i and then if there is a lesson scheduled on this hour
-                utils.uprint(xsum(hour) >= 0.99)
+                # utils.uprint(xsum(hour) >= 0.99)
                 if last < i and xsum(hour) * i != 0:
                     last = i
 
-            utils.uprint(f"First: {first}")
-            utils.uprint(f"Last: {last}")
+            # utils.uprint(f"First: {first}")
+            # utils.uprint(f"Last: {last}")
 
             amounts.append(last - (first - 1) -
                            xsum([lesson.scheduled for lesson in lessons]))

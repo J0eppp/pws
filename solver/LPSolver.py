@@ -11,10 +11,10 @@ SEPERATION_STRING = "-==================================-"
 
 
 class LPSolver(Solver):
-    def __init__(self, timetable: Timetable):
+    def __init__(self, timetable: Timetable, verbose=0):
         self.timetable = timetable
         self.model = Model("timetable")
-        # self.model.verbose = 1
+        self.model.verbose = verbose
 
     def solve(self) -> Timetable:
         return self.__solve()

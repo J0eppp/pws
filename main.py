@@ -19,6 +19,7 @@ def main():
     parser.add_argument("--display", action="store_true",
                         help="Display the graph (when using the GC sovler)")
     parser.add_argument("-g", "--gui", action="store_true", help="Use the GUI")
+    parser.add_argument("-v", "--verbosity", type=int, help="Set the verbosity")
     args = parser.parse_args()
     data_file = args.data
     save_file = args.save
@@ -54,7 +55,8 @@ def main():
 
         # Select solver
         if args.solver == "lp":
-            solver = LPSolver(timetable)
+            verbosity = args.verbosity if args.verbosity != None else 0
+            solver = LPSolver(timetable, verbosity)
         elif args.solver == "gc":
             display = False
             if args.display != None:
