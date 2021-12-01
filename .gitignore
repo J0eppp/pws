@@ -13,3 +13,5 @@ Pipfile.lock
 
 model.lp
 *.svg
+
+result.json
