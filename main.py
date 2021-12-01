@@ -4,8 +4,6 @@ import time
 import solver.utils as utils
 from solver.parser import parse_json_file
 from solver.datatypes import Timetable
-from solver.LPSolver import LPSolver
-from solver.GCSolver import GCSolver
 
 SEPERATION_STRING = "-==================================-"
 
@@ -38,53 +36,41 @@ def main():
             utils.uprint("    2. Graph colouring (gc)")
             return
 
+        start_time = 0
+        end_time = 0
+
         # Read and parse the file with all the data
-        utils.uprint(SEPERATION_STRING)
-        utils.uprint("Reading and parsing the file....")
-        start_time = time.time()
+        if args.verbosity == 1:
+            utils.uprint(SEPERATION_STRING)
+            utils.uprint("Reading and parsing the file....")
+            start_time = time.time()
+            
         timetable: Timetable = parse_json_file(data_file)
-        end_time = time.time()
-        utils.uprint("Done reading and parsing the file")
-        utils.uprint(
-            f"Reading and parsing the file took {end_time - start_time} seconds")
-        utils.uprint("Loaded {amount_of_groups} group{multiple_groups} and {amount_of_teachers} teacher{multiple_teachers}".format(amount_of_groups=len(
-            timetable.groups), amount_of_teachers=len(timetable.teachers), multiple_groups="s" if len(timetable.groups) > 1 else "", multiple_teachers="s" if len(timetable.teachers) > 1 else ""))
-        utils.uprint(SEPERATION_STRING)
+        
+        if args.verbosity == 1:
+            end_time = time.time()
+            utils.uprint("Done reading and parsing the file")
+            utils.uprint(
+                f"Reading and parsing the file took {end_time - start_time} seconds")
+            utils.uprint("Loaded {amount_of_groups} group{multiple_groups} and {amount_of_teachers} teacher{multiple_teachers}".format(amount_of_groups=len(
+                timetable.groups), amount_of_teachers=len(timetable.teachers), multiple_groups="s" if len(timetable.groups) > 1 else "", multiple_teachers="s" if len(timetable.teachers) > 1 else ""))
+            utils.uprint(SEPERATION_STRING)
 
         solver = None
 
         # Select solver
         if args.solver == "lp":
+            from solver.LPSolver import LPSolver
             verbosity = args.verbosity if args.verbosity != None else 0
-            solver = LPSolver(timetable, verbosity)
+            solver = LPSolver(timetable, verbosity, args.save)
         elif args.solver == "gc":
+            from solver.GCSolver import GCSolver
             display = False
             if args.display != None:
                 display = args.display
             solver = GCSolver(timetable, display=display, save=save_file)
 
         timetable = solver.solve()
-
-        if save_file:
-            if args.solver == "lp":
-                utils.uprint(SEPERATION_STRING)
-                utils.uprint(f"Saving the model to: {save_file}")
-                start_time = time.time()
-                solver.model.write(save_file)
-                end_time = time.time()
-                utils.uprint("Done saving the model")
-                utils.uprint(
-                    f"Saving the model took {end_time - start_time} seconds")
-                utils.uprint(SEPERATION_STRING)
-        # elif args.solver == "gc":
-        #     utils.uprint(SEPERATION_STRING)
-        #     utils.uprint(f"Saving the graph to: {save_file}")
-        #     start_time = time.time()
-        #     solver.fig.savefig(save_file, format="svg", dpi=1200)
-        #     end_time = time.time()
-        #     utils.uprint("Done saving the graph")
-        #     utils.uprint(
-        #         f"Saving the graph took {end_time - start_time} seconds")
 
     if args.gui == True:
         from solver.GUI import GUI

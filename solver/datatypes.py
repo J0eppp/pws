@@ -2,7 +2,8 @@ from typing import List, Any
 from dataclasses import dataclass
 from . import utils
 from mip import xsum
-# import utils
+
+import json
 
 
 @dataclass
@@ -22,6 +23,10 @@ class Teacher(BaseType):
     def select_lessons(self):
         self.lessons = [
             lesson for lesson in self.lessons if lesson.scheduled.x >= 0.99]
+    
+    @property
+    def json(self):
+        return { "name": self.name, "subject": self.subject }
 
 
 @dataclass
@@ -75,10 +80,15 @@ class Group(BaseType):
     def select_lessons(self):
         self.lessons = [
             lesson for lesson in self.lessons if lesson.scheduled.x >= 0.99]
+    
+    @property
+    def json(self):
+        return { "name": self.name, "year": self.year, "subjects": self.subjects }
 
 
 @dataclass
 class Lesson(BaseType):
+    """Represents a lesson"""
     teacher: Teacher
     group: Group
     day: int
@@ -88,6 +98,10 @@ class Lesson(BaseType):
 
     def __str__(self) -> str:
         return f"D{self.day}H{self.hour} - G {self.group.name} T {self.teacher.name} subject {self.teacher.subject}"
+    
+    @property
+    def json(self) -> str:
+        return { "day": self.day, "hour": self.hour, "teacher": self.teacher.json, "group": self.group.json, "subjectInfo": self.subj_info.json, "scheduled": self.scheduled.x }
 
 
 @dataclass
@@ -96,10 +110,14 @@ class SubjectInformation:
     year: int
     amount: int
 
+    @property
+    def json(self):
+        return { "subject": self.subject, "year": self.year, "amount": self.amount }
+
 
 @dataclass
 class Timetable:
-    """This class will contain all data and methods to create a feasible timetable, to give to the LP"""
+    """This class contains all the data and methods to represent a timetable"""
     groups: List[Group]
     teachers: List[Teacher]
     subject_information: List[SubjectInformation]
@@ -108,6 +126,7 @@ class Timetable:
     lessons: List[Lesson]
 
     def can_schedule(self, lesson: Lesson) -> bool:
+        """Check if the lesson can be scheduled"""
         # First we check if we can schedule this for the group
         # Loop through all the lessons for the group
         for l in lesson.group.lessons:
@@ -201,3 +220,7 @@ class Timetable:
                     return False
 
         return True
+
+    @property
+    def json(self):
+        return { "lessons": [lesson.json for lesson in self.lessons] }

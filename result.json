@@ -1,0 +1,3604 @@
+{
+    "lessons": [
+        {
+            "day": 0,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1A",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 6,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1B",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 6,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1C",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1D",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1E",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 6,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 6,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 6,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 6,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 7,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1F",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 6,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1G",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1H",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 7,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 1",
+                "subject": "Nederlands"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Nederlands",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 2,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 6,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 6,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 6,
+            "teacher": {
+                "name": "Teacher 2",
+                "subject": "Engels"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Engels",
+                "year": 1,
+                "amount": 4
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 4,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 4,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 3,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 3",
+                "subject": "Wiskunde"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Wiskunde",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 0,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 1,
+            "teacher": {
+                "name": "Teacher 4",
+                "subject": "Duits"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Duits",
+                "year": 1,
+                "amount": 2
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 0,
+            "hour": 5,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 1,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        },
+        {
+            "day": 2,
+            "hour": 3,
+            "teacher": {
+                "name": "Teacher 5",
+                "subject": "Frans"
+            },
+            "group": {
+                "name": "1I",
+                "year": 1,
+                "subjects": [
+                    "Nederlands",
+                    "Engels",
+                    "Wiskunde",
+                    "Duits",
+                    "Frans"
+                ]
+            },
+            "subjectInfo": {
+                "subject": "Frans",
+                "year": 1,
+                "amount": 3
+            },
+            "scheduled": 1.0
+        }
+    ]
+}
