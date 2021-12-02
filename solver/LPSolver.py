@@ -15,7 +15,7 @@ class LPSolver(Solver):
         self.timetable = timetable
         self.model = Model("timetable")
         self.model.verbose = verbose
-        self.verbose = verbose # Internal use
+        self.verbose = verbose  # Internal use
         self.save = save
 
     def solve(self) -> Timetable:
@@ -95,17 +95,8 @@ class LPSolver(Solver):
 
         # Objective function
         # Minimize the count of hours so earlier hours are preferred
-        self.model.objective = minimize(xsum([xsum([lesson.hour * lesson.scheduled for lesson in group.lessons]) for group in self.timetable.groups]))
-        # self.model.objective = minimize(
-        #     xsum([group.count_gap_hours(self.timetable.amount_of_days_a_week, self.timetable.amount_of_hours_a_day)
-        #          for group in groups])
-        # )
-        # Minimize the count of hours
-        # Effectively this will try to put all the hours earlier on the day
-        # self.model.objective = minimize(
-        #     xsum(
-        #         [(lesson.hour * lesson.hour) * lesson.scheduled for lesson in group.lessons for group in groups])
-        # )
+        self.model.objective = minimize(xsum(
+            [xsum([lesson.hour * lesson.scheduled for lesson in group.lessons]) for group in self.timetable.groups]))
 
         if self.verbose == 1:
             utils.uprint(SEPERATION_STRING)
@@ -139,16 +130,17 @@ class LPSolver(Solver):
                 utils.uprint(SEPERATION_STRING)
                 utils.uprint(f"Saving the timetable to {self.save}")
                 start_time = time.time()
-                
+
             file = open(self.save, "w+")
             json.dump(self.timetable.json, file, indent=4)
             # file.write(self.timetable.json)
             file.close()
-            
+
             if self.verbose == 1:
                 end_time = time.time()
                 utils.uprint("Done saving  the timetable")
-                utils.uprint(f"Saving the timetable took {end_time - start_time} seconds")
+                utils.uprint(
+                    f"Saving the timetable took {end_time - start_time} seconds")
                 utils.uprint(SEPERATION_STRING)
 
         return self.timetable

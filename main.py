@@ -17,7 +17,10 @@ def main():
     parser.add_argument("--display", action="store_true",
                         help="Display the graph (when using the GC sovler)")
     parser.add_argument("-g", "--gui", action="store_true", help="Use the GUI")
-    parser.add_argument("-v", "--verbosity", type=int, help="Set the verbosity")
+    parser.add_argument("-v", "--verbosity", type=int,
+                        help="Set the verbosity")
+    parser.add_argument("--csv", type=str,
+                        help="Save the result as a CSV document")
     args = parser.parse_args()
     data_file = args.data
     save_file = args.save
@@ -44,9 +47,9 @@ def main():
             utils.uprint(SEPERATION_STRING)
             utils.uprint("Reading and parsing the file....")
             start_time = time.time()
-            
+
         timetable: Timetable = parse_json_file(data_file)
-        
+
         if args.verbosity == 1:
             end_time = time.time()
             utils.uprint("Done reading and parsing the file")
@@ -71,6 +74,15 @@ def main():
             solver = GCSolver(timetable, display=display, save=save_file)
 
         timetable = solver.solve()
+
+        if args.csv != None:
+            # Save the document as a CSV
+            import csv
+            file = open(args.csv, "w+", newline='')
+            csvwriter = csv.writer(file, delimiter=' ',
+                                   quotechar='|', quoting=csv.QUOTE_MINIMAL)
+
+            file.close()
 
     if args.gui == True:
         from solver.GUI import GUI

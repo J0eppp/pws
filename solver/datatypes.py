@@ -23,10 +23,10 @@ class Teacher(BaseType):
     def select_lessons(self):
         self.lessons = [
             lesson for lesson in self.lessons if lesson.scheduled.x >= 0.99]
-    
+
     @property
     def json(self):
-        return { "name": self.name, "subject": self.subject }
+        return {"name": self.name, "subject": self.subject}
 
 
 @dataclass
@@ -80,10 +80,10 @@ class Group(BaseType):
     def select_lessons(self):
         self.lessons = [
             lesson for lesson in self.lessons if lesson.scheduled.x >= 0.99]
-    
+
     @property
     def json(self):
-        return { "name": self.name, "year": self.year, "subjects": self.subjects }
+        return {"name": self.name, "year": self.year, "subjects": self.subjects}
 
 
 @dataclass
@@ -98,10 +98,10 @@ class Lesson(BaseType):
 
     def __str__(self) -> str:
         return f"D{self.day}H{self.hour} - G {self.group.name} T {self.teacher.name} subject {self.teacher.subject}"
-    
+
     @property
     def json(self) -> str:
-        return { "day": self.day, "hour": self.hour, "teacher": self.teacher.json, "group": self.group.json, "subjectInfo": self.subj_info.json, "scheduled": self.scheduled.x }
+        return {"day": self.day, "hour": self.hour, "teacher": self.teacher.json, "group": self.group.json, "subjectInfo": self.subj_info.json, "scheduled": self.scheduled.x}
 
 
 @dataclass
@@ -112,7 +112,7 @@ class SubjectInformation:
 
     @property
     def json(self):
-        return { "subject": self.subject, "year": self.year, "amount": self.amount }
+        return {"subject": self.subject, "year": self.year, "amount": self.amount}
 
 
 @dataclass
@@ -223,4 +223,4 @@ class Timetable:
 
     @property
     def json(self):
-        return { "lessons": [lesson.json for lesson in self.lessons] }
+        return {"lessons": [lesson.json for lesson in self.lessons]}
