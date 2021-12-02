@@ -1,3 +1,5 @@
+# Linear programming - carpenter problem
+# https://github.com/J0eppp/pws/blob/main/mip_examples/carpenter_problem.py
 from mip import Model, INTEGER, maximize
 
 # Create the model
