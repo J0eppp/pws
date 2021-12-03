@@ -37,6 +37,7 @@ def main():
             utils.uprint("Available solving methods:")
             utils.uprint("    1. Linear programming (lp)")
             utils.uprint("    2. Graph colouring (gc)")
+            utils.uprint("    3. Random solver (rs)")
             return
 
         start_time = 0
@@ -72,6 +73,10 @@ def main():
             if args.display != None:
                 display = args.display
             solver = GCSolver(timetable, display=display, save=save_file)
+        elif args.solver == "rs":
+            from solver.RandomSolver import RandomSolver
+            verbosity = args.verbosity if args.verbosity != None else 0
+            solver = RandomSolver(timetable, verbosity=verbosity)
 
         timetable = solver.solve()
 

@@ -16,6 +16,7 @@ class Teacher(BaseType):
     name: str
     subject: str
     lessons: List["Lesson"]
+    selected_amount: int = 0
 
     def __str__(self) -> str:
         return f"{self.name}, subject: {self.subject}"
