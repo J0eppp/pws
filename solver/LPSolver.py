@@ -13,7 +13,7 @@ SEPERATION_STRING = "-==================================-"
 class LPSolver(Solver):
     def __init__(self, timetable: Timetable, verbose=0, save=None):
         self.timetable = timetable
-        self.model = Model("timetable")
+        self.model = Model("timetable", solver_name="CBC")
         self.model.verbose = verbose
         self.verbose = verbose  # Internal use
         self.save = save
@@ -84,6 +84,8 @@ class LPSolver(Solver):
                 # Conflict, we can only use one of the lessons
                 self.model += lesson1.scheduled + lesson2.scheduled <= 1
                 nr_constraints += 1
+                if self.verbose == 1:
+                    print(f"Constraint: {nr_constraints}", end="\r")
 
         if self.verbose == 1:
             end_time = time.time()
