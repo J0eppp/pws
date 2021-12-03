@@ -10,6 +10,7 @@ matplotlib = "*"
 pysimplegui = "*"
 tk = "*"
 openpyxl = "*"
+scipy = "*"
 
 [dev-packages]
 autopep8 = "*"

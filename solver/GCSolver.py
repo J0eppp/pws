@@ -34,11 +34,23 @@ class GCSolver(Solver):
         uprint("Sorting data")
         start_time = time()
 
+        subjects = []
+        for si in self.timetable.subject_information:
+            try:
+                subjects.index(si.subject)
+            except ValueError:
+                subjects.append(si.subject)
+
         # Create a dictionary for the subject information
         subject_information = {}
+        for subject in subjects:
+            subject_information[f"{subject}"] = {}
         for si in self.timetable.subject_information:
             # subject_information[si.subject][si.year] = si
-            subject_information.update({f"{si.subject}": {f"{si.year}": si}})
+            # subject_information.update({f"{si.subject}": {f"{si.year}": si}})
+            # subject_information[f"{si.subject}"] = { f"{si.year}": si }
+            # subject_information[f"{si.subject}"] = subject_information[f"{si.subject}"].update({ f"{si.year}": si })
+            subject_information[f"{si.subject}"][f"{si.year}"] = si
 
         # Create a dictionary for the teachers based on subject
         teachers = {}
@@ -62,13 +74,15 @@ class GCSolver(Solver):
         for group in self.timetable.groups:
             for subject in group.subjects:
                 si = subject_information[subject][f"{group.year}"]
+                teacher = sorted([teacher for teacher in self.timetable.teachers if teacher.subject == si.subject], key=lambda x: x.selected_amount)[0]
+                teacher.selected_amount += 1
                 for _ in range(si.amount):
                     lessons.append(
-                        Lesson(len(lessons), teachers[si.subject], group, None, None, si, 0))
+                        Lesson(len(lessons), teacher, group, None, None, si, 0))
                     labels.update({len(lessons) - 1: si.subject})
 
         end_time = time()
-        uprint("Done creating lesson objects")
+        uprint(f"Done creating {len(lessons)} lesson objects")
         uprint(f"Creating lesson objects took {end_time - start_time} seconds")
         uprint(SEPERATION_STRING)
 
@@ -92,7 +106,7 @@ class GCSolver(Solver):
 
         for (l1, l2) in combinations(lessons, 2):
             if l1.group == l2.group or l1.teacher == l2.teacher:
-                self.network.add_edge(l1.identifier, l2.identifier)
+                self.network.add_edge(l1.identifier, l2.identifier, weight=1)
 
         end_time = time()
         uprint("Done creating connections")
@@ -160,22 +174,26 @@ class GCSolver(Solver):
         for v, data in self.network.nodes(data=True):
             calendar[from_color_to_hour[data['color']]].append(v)
 
-        pretty_print(self.timetable)
+        # pretty_print(self.timetable)
 
         # Draw everything
         self.node_colours = [data["color"]
                              for v, data in self.network.nodes(data=True)]
+        # self.node_colours = node_colours
 
         if self.display == True:
             # Display
-            pos = nx.spring_layout(self.network, k=0.75)
+            pos = nx.spiral_layout(self.network)
             nx.draw_networkx(self.network, pos, with_labels=True,
-                             node_color=self.node_colours)
+                             node_color=self.node_colours, node_size=60, font_size=8)
             plt.show()
 
         if self.save != None:
             uprint(SEPERATION_STRING)
             uprint(f"Saving the graph to: {self.save}")
+            pos = nx.spiral_layout(self.network)
+            nx.draw_networkx(self.network, pos, with_labels=True,
+                             node_color=self.node_colours, node_size=60, font_size=8)
             self.fig.axis('off')
             self.fig.gca().set_position([0, 0, 1, 1])
             start_time = time()
