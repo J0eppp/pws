@@ -19,8 +19,8 @@ def main():
     parser.add_argument("-g", "--gui", action="store_true", help="Use the GUI")
     parser.add_argument("-v", "--verbosity", type=int,
                         help="Set the verbosity")
-    parser.add_argument("--csv", type=str,
-                        help="Save the result as a CSV document")
+    parser.add_argument("--excel", type=str,
+                        help="Save the result as an Excel document")
     args = parser.parse_args()
     data_file = args.data
     save_file = args.save
@@ -75,14 +75,39 @@ def main():
 
         timetable = solver.solve()
 
-        if args.csv != None:
-            # Save the document as a CSV
-            import csv
-            file = open(args.csv, "w+", newline='')
-            csvwriter = csv.writer(file, delimiter=' ',
-                                   quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        if args.excel != None:
+            # Save the document as an Excel document
+            from openpyxl import Workbook
+            if args.verbosity == 1:
+                utils.uprint(SEPERATION_STRING)
+                utils.uprint("Saving the timetable as an Excel document")
+                start_time = time.time()
+            workbook = Workbook()
+            worksheet = workbook.active
+            for i in range(len(timetable.groups)):
+                group = timetable.groups[i]
+                column = i + 1
+                worksheet.cell(column=column, row=1).value = group.name
+                days = [[] for _ in range(timetable.amount_of_days_a_week)]
+                for lesson in group.lessons:
+                    days[lesson.day].append(lesson)
 
-            file.close()
+                [day.sort(key=lambda x: x.hour) for day in days]
+                row = 2
+                for day in days:
+                    for lesson in day:
+                        worksheet.cell(
+                            row=row, column=column).value = lesson.excel_str()
+                        row += 1
+
+            workbook.save(args.excel)
+            if args.verbosity == 1:
+                end_time = time.time()
+                utils.uprint(
+                    "Saving the timetable as an Excel document is done")
+                utils.uprint(
+                    f"Saving the document took {end_time - start_time} seconds")
+                utils.uprint(SEPERATION_STRING)
 
     if args.gui == True:
         from solver.GUI import GUI

@@ -103,6 +103,9 @@ class Lesson(BaseType):
     def json(self) -> str:
         return {"day": self.day, "hour": self.hour, "teacher": self.teacher.json, "group": self.group.json, "subjectInfo": self.subj_info.json, "scheduled": self.scheduled.x}
 
+    def excel_str(self) -> str:
+        return f"D{self.day}H{self.hour} - {self.teacher.subject} ({self.teacher.name})"
+
 
 @dataclass
 class SubjectInformation:

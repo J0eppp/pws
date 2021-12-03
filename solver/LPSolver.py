@@ -122,8 +122,7 @@ class LPSolver(Solver):
             utils.uprint(SEPERATION_STRING)
             utils.uprint(f"Amount of hours selected: {len(selected)}")
             utils.uprint(SEPERATION_STRING)
-
-        pretty_print(self.timetable)
+            pretty_print(self.timetable)
 
         if self.save != None:
             if self.verbose == 1:
