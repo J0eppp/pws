@@ -10,7 +10,6 @@ def pretty_print(timetable: Timetable) -> str:
         daylist = [[] for _ in range(5)]
         print(f"Group {group.identifier}\n")
         for lesson in group.lessons:
-            print(lesson.day)
             daylist[lesson.day].append(lesson)
 
         for i, day in enumerate(daylist):

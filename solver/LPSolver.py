@@ -39,6 +39,8 @@ class LPSolver(Solver):
         S = []
         for group in groups:
             for subject in group.subjects:
+                # Use this to check if this possibility already has been used
+                scheduled = [[] for _ in range(self.timetable.amount_of_days_a_week)]
                 for si in subject_infos:
                     if si.subject != subject:
                         continue
@@ -47,11 +49,15 @@ class LPSolver(Solver):
                     for _ in range(si.amount):
                         for day in range(self.timetable.amount_of_days_a_week):
                             for hour in range(self.timetable.amount_of_hours_a_day):
+                                if scheduled[day].__contains__(hour):
+                                    continue
                                 lesson = Lesson(
                                     len(S) - 1, teacher, group, day, hour, si, self.model.add_var(var_type=BINARY))
                                 teacher.lessons.append(lesson)
                                 group.lessons.append(lesson)
                                 S.append(lesson)
+                                scheduled[day].append(hour)
+                    break
 
         if self.verbose == 1:
             end_time = time.time()
@@ -77,6 +83,8 @@ class LPSolver(Solver):
                 self.model += xsum([lesson.scheduled for lesson in S if lesson.group ==
                                    group and lesson.teacher == teacher]) == amount
                 nr_constraints += 1
+                if self.verbose == 1:
+                    print(f"Constraint: {nr_constraints}", end="\r")
 
         # Making sure lessons do not conflict in the second constraint
         for (lesson1, lesson2) in combinations(S, r=2):
