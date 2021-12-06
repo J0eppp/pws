@@ -2,7 +2,7 @@ from itertools import combinations
 from .Solver import Solver
 from .Prettyprint import pretty_print
 from .datatypes import Timetable, Lesson
-from mip import Model, minimize, BINARY, xsum
+from mip import Model, minimize, BINARY, xsum, CBC
 from . import utils
 import time
 import json
@@ -13,7 +13,7 @@ SEPERATION_STRING = "-==================================-"
 class LPSolver(Solver):
     def __init__(self, timetable: Timetable, verbose=0, save=None):
         self.timetable = timetable
-        self.model = Model("timetable", solver_name="CBC")
+        self.model = Model("timetable", solver_name=CBC)
         self.model.verbose = verbose
         self.verbose = verbose  # Internal use
         self.save = save
