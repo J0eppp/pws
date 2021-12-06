@@ -44,8 +44,8 @@ class LPSolver(Solver):
                 for si in subject_infos:
                     if si.subject != subject:
                         continue
-                    teacher = [
-                        teacher for teacher in self.timetable.teachers if teacher.subject == subject][0]
+                    teacher = sorted([
+                        teacher for teacher in self.timetable.teachers if teacher.subject == subject], key=lambda x: x.selected_amount)[0]
                     for _ in range(si.amount):
                         for day in range(self.timetable.amount_of_days_a_week):
                             for hour in range(self.timetable.amount_of_hours_a_day):
@@ -54,6 +54,7 @@ class LPSolver(Solver):
                                 lesson = Lesson(
                                     len(S) - 1, teacher, group, day, hour, si, self.model.add_var(var_type=BINARY))
                                 teacher.lessons.append(lesson)
+                                teacher.selected_amount += 1
                                 group.lessons.append(lesson)
                                 S.append(lesson)
                                 scheduled[day].append(hour)
