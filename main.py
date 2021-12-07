@@ -11,7 +11,7 @@ SEPERATION_STRING = "-==================================-"
 def main():
     parser = ArgumentParser(description="Process arguments for this program")
     parser.add_argument("-s", "--solver", type=str,
-                        help="Select the linear programming solver")
+                        help="Select the solver (lp, gc, rs)")
     parser.add_argument("-d", "--data", type=str, help="Select the JSON file")
     parser.add_argument("--save", type=str, help="Where to save the model")
     parser.add_argument("--display", action="store_true",
@@ -99,11 +99,16 @@ def main():
 
                 [day.sort(key=lambda x: x.hour) for day in days]
                 row = 2
-                for day in days:
+                # for day in days:
+                for j in range(len(days)):
+                    day = days[j]
+                    worksheet.cell(
+                        row=row, column=column).value = f"Dag: {j + 1}"
+                    row += 1
                     for lesson in day:
                         worksheet.cell(
-                            row=row, column=column).value = lesson.excel_str()
-                        row += 1
+                            row=row + lesson.hour, column=column).value = lesson.excel_str()
+                    row += 9
 
             workbook.save(args.excel)
             if args.verbosity == 1:

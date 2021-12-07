@@ -1,0 +1,558 @@
+{
+    "subjectInformation": [
+        {
+            "subject": "Nederlands",
+            "year": 1,
+            "amount": 4
+        },
+        {
+            "subject": "Engels",
+            "year": 1,
+            "amount": 4
+        },
+        {
+            "subject": "Wiskunde",
+            "year": 1,
+            "amount": 4
+        },
+        {
+            "subject": "Biologie",
+            "year": 1,
+            "amount": 2
+        },
+        {
+            "subject": "BV",
+            "year": 1,
+            "amount": 2
+        },
+        {
+            "subject": "LO",
+            "year": 1,
+            "amount": 4
+        },
+        {
+            "subject": "Frans",
+            "year": 1,
+            "amount": 3
+        },
+        {
+            "subject": "Geschiedenis",
+            "year": 1,
+            "amount": 3
+        },
+        {
+            "subject": "NaSk",
+            "year": 1,
+            "amount": 3
+        },
+        {
+            "subject": "Mentorles",
+            "year": 1,
+            "amount": 1
+        },
+        {
+            "subject": "Nederlands",
+            "year": 2,
+            "amount": 4
+        },
+        {
+            "subject": "Engels",
+            "year": 2,
+            "amount": 4
+        },
+        {
+            "subject": "Wiskunde",
+            "year": 2,
+            "amount": 4
+        },
+        {
+            "subject": "Biologie",
+            "year": 2,
+            "amount": 2
+        },
+        {
+            "subject": "BV",
+            "year": 2,
+            "amount": 2
+        },
+        {
+            "subject": "LO",
+            "year": 2,
+            "amount": 4
+        },
+        {
+            "subject": "Frans",
+            "year": 2,
+            "amount": 3
+        },
+        {
+            "subject": "Geschiedenis",
+            "year": 2,
+            "amount": 3
+        },
+        {
+            "subject": "NaSk",
+            "year": 2,
+            "amount": 3
+        },
+        {
+            "subject": "Mentorles",
+            "year": 2,
+            "amount": 1
+        },
+        {
+            "subject": "Nederlands",
+            "year": 3,
+            "amount": 4
+        },
+        {
+            "subject": "Engels",
+            "year": 3,
+            "amount": 4
+        },
+        {
+            "subject": "Wiskunde",
+            "year": 3,
+            "amount": 4
+        },
+        {
+            "subject": "Biologie",
+            "year": 3,
+            "amount": 2
+        },
+        {
+            "subject": "BV",
+            "year": 3,
+            "amount": 2
+        },
+        {
+            "subject": "LO",
+            "year": 3,
+            "amount": 4
+        },
+        {
+            "subject": "Frans",
+            "year": 3,
+            "amount": 3
+        },
+        {
+            "subject": "Geschiedenis",
+            "year": 3,
+            "amount": 3
+        },
+        {
+            "subject": "NaSk",
+            "year": 3,
+            "amount": 3
+        },
+        {
+            "subject": "Mentorles",
+            "year": 3,
+            "amount": 1
+        }
+    ],
+    "groups": [
+        {
+            "name": "zhk1a",
+            "year": 1,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "zhk1b",
+            "year": 1,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "zhv1a",
+            "year": 1,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "zhv1b",
+            "year": 1,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "zhv1c",
+            "year": 1,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "za1a",
+            "year": 1,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "za1b",
+            "year": 1,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "zg1a",
+            "year": 1,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "zhv2a",
+            "year": 2,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "zhv2b",
+            "year": 2,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "zhv2c",
+            "year": 2,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "za2a",
+            "year": 2,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "za2b",
+            "year": 2,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "za2c",
+            "year": 2,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "za2d",
+            "year": 2,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "zg2a",
+            "year": 2,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "zh3a",
+            "year": 3,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "zh3b",
+            "year": 3,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "zh3c",
+            "year": 3,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "za3a",
+            "year": 3,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "za3b",
+            "year": 3,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        },
+        {
+            "name": "za3c",
+            "year": 3,
+            "subjects": [
+                "Nederlands",
+                "Engels",
+                "Wiskunde",
+                "Biologie",
+                "BV",
+                "LO",
+                "Frans",
+                "Geschiedenis",
+                "NaSk"
+            ],
+            "lessons": []
+        }
+    ],
+    "teacherInfo": [
+        {
+            "subject": "Nederlands",
+            "prefix": "Ned",
+            "amount": 3
+        },
+        {
+            "subject": "Engels",
+            "prefix": "Eng",
+            "amount": 3
+        },
+        {
+            "subject": "Wiskunde",
+            "prefix": "Wisk",
+            "amount": 3
+        },
+        {
+            "subject": "Biologie",
+            "prefix": "Bio",
+            "amount": 3
+        },
+        {
+            "subject": "BV",
+            "prefix": "BV",
+            "amount": 3
+        },
+        {
+            "subject": "LO",
+            "prefix": "LO",
+            "amount": 3
+        },
+        {
+            "subject": "Frans",
+            "prefix": "Fr",
+            "amount": 3
+        },
+        {
+            "subject": "Geschiedenis",
+            "prefix": "Gs",
+            "amount": 3
+        },
+        {
+            "subject": "NaSk",
+            "prefix": "Nk",
+            "amount": 3
+        }
+    ],
+    "lessons": [],
+    "amountOfDaysAWeek": 5,
+    "amountOfHoursADay": 9
+}
