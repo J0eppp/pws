@@ -18,8 +18,10 @@ class LPSolver(Solver):
         self.verbose = verbose  # Internal use
         self.save = save
 
-    def log(self, msg: str):
-        utils.uprint(msg)
+    def log(self, msg: str, end: str = None, simple: bool = False):
+        if simple == False:
+            return utils.uprint(msg, end)
+        return print(msg, end=end)
 
     def solve(self) -> Timetable:
         return self.__solve()
@@ -89,7 +91,8 @@ class LPSolver(Solver):
                                    group and lesson.teacher == teacher]) == amount
                 nr_constraints += 1
                 if self.verbose == 1:
-                    print(f"Constraint: {nr_constraints}", end="\r")
+                    self.log(
+                        f"Constraint: {nr_constraints}", end="\r")
 
         # Making sure lessons do not conflict in the second constraint
         for (lesson1, lesson2) in combinations(S, r=2):
@@ -98,7 +101,8 @@ class LPSolver(Solver):
                 self.model += lesson1.scheduled + lesson2.scheduled <= 1
                 nr_constraints += 1
                 if self.verbose == 1:
-                    print(f"Constraint: {nr_constraints}", end="\r")
+                    self.log(
+                        f"Constraint: {nr_constraints}", end="\r")
 
         if self.verbose == 1:
             end_time = time.time()
@@ -117,13 +121,14 @@ class LPSolver(Solver):
             self.log(SEPERATION_STRING)
             self.log("Optimizing")
             start_time = time.time()
-            print(self.model.optimize())
+
+        self.model.optimize()
+
+        if self.verbose == 1:
             end_time = time.time()
             self.log("Done optimizing")
             self.log(f"Optimizing took {end_time - start_time} seconds")
             self.log(SEPERATION_STRING)
-        else:
-            self.model.optimize()
 
         selected = [
             lesson for lesson in S if lesson.scheduled.x >= 0.99]

@@ -13,10 +13,8 @@ def pretty_print(timetable: Timetable) -> str:
             daylist[lesson.day].append(lesson)
 
         for i, day in enumerate(daylist):
-            print(f"Day {i}")
+            print(f"Day {i + 1}")
             day.sort(key=lambda x: x.hour)
             [print(lesson) for lesson in day]
 
-        print("\n")
         uprint(SEPERATION_STRING)
-        print("\n")

@@ -98,7 +98,7 @@ class Lesson(BaseType):
     scheduled: Any
 
     def __str__(self) -> str:
-        return f"D{self.day}H{self.hour} - G {self.group.name} T {self.teacher.name} subject {self.teacher.subject}"
+        return f"D{self.day + 1}H{self.hour + 1} - {self.group.name} - {self.teacher.subject} - {self.teacher.name}"
 
     @property
     def json(self) -> str:
