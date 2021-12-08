@@ -18,6 +18,9 @@ class LPSolver(Solver):
         self.verbose = verbose  # Internal use
         self.save = save
 
+    def log(self, msg: str):
+        utils.uprint(msg)
+
     def solve(self) -> Timetable:
         return self.__solve()
 
@@ -27,8 +30,8 @@ class LPSolver(Solver):
         end_time = 0
 
         if self.verbose == 1:
-            utils.uprint(SEPERATION_STRING)
-            utils.uprint("Creating all possibilities")
+            self.log(SEPERATION_STRING)
+            self.log("Creating all possibilities")
             start_time = time.time()
 
         groups = self.timetable.groups
@@ -40,7 +43,8 @@ class LPSolver(Solver):
         for group in groups:
             for subject in group.subjects:
                 # Use this to check if this possibility already has been used
-                scheduled = [[] for _ in range(self.timetable.amount_of_days_a_week)]
+                scheduled = [[]
+                             for _ in range(self.timetable.amount_of_days_a_week)]
                 for si in subject_infos:
                     if si.subject != subject:
                         continue
@@ -62,15 +66,15 @@ class LPSolver(Solver):
 
         if self.verbose == 1:
             end_time = time.time()
-            utils.uprint(f"Created {len(S)} possibilities")
-            utils.uprint(
+            self.log(f"Created {len(S)} possibilities")
+            self.log(
                 f"Creating all possibilities took {end_time - start_time} seconds")
 
         # Creating constraints
         nr_constraints = 0
         if self.verbose == 1:
-            utils.uprint(SEPERATION_STRING)
-            utils.uprint("Creating constraints")
+            self.log(SEPERATION_STRING)
+            self.log("Creating constraints")
             start_time = time.time()
 
         # The first constraint makes sure that a lesson should be scheduled a specific amount of times
@@ -98,11 +102,11 @@ class LPSolver(Solver):
 
         if self.verbose == 1:
             end_time = time.time()
-            utils.uprint("Done creating constraints")
-            utils.uprint(f"Created {nr_constraints} constraints")
-            utils.uprint(
+            self.log("Done creating constraints")
+            self.log(f"Created {nr_constraints} constraints")
+            self.log(
                 f"Creating constraints took {end_time - start_time} seconds")
-            utils.uprint(SEPERATION_STRING)
+            self.log(SEPERATION_STRING)
 
         # Objective function
         # Minimize the count of hours so earlier hours are preferred
@@ -110,14 +114,14 @@ class LPSolver(Solver):
             [xsum([lesson.hour * lesson.scheduled for lesson in group.lessons]) for group in self.timetable.groups]))
 
         if self.verbose == 1:
-            utils.uprint(SEPERATION_STRING)
-            utils.uprint("Optimizing")
+            self.log(SEPERATION_STRING)
+            self.log("Optimizing")
             start_time = time.time()
             print(self.model.optimize())
             end_time = time.time()
-            utils.uprint("Done optimizing")
-            utils.uprint(f"Optimizing took {end_time - start_time} seconds")
-            utils.uprint(SEPERATION_STRING)
+            self.log("Done optimizing")
+            self.log(f"Optimizing took {end_time - start_time} seconds")
+            self.log(SEPERATION_STRING)
         else:
             self.model.optimize()
 
@@ -130,15 +134,15 @@ class LPSolver(Solver):
         [teacher.select_lessons() for teacher in teachers]
 
         if self.verbose == 1:
-            utils.uprint(SEPERATION_STRING)
-            utils.uprint(f"Amount of hours selected: {len(selected)}")
-            utils.uprint(SEPERATION_STRING)
+            self.log(SEPERATION_STRING)
+            self.log(f"Amount of hours selected: {len(selected)}")
+            self.log(SEPERATION_STRING)
             pretty_print(self.timetable)
 
         if self.save != None:
             if self.verbose == 1:
-                utils.uprint(SEPERATION_STRING)
-                utils.uprint(f"Saving the timetable to {self.save}")
+                self.log(SEPERATION_STRING)
+                self.log(f"Saving the timetable to {self.save}")
                 start_time = time.time()
 
             file = open(self.save, "w+")
@@ -148,9 +152,9 @@ class LPSolver(Solver):
 
             if self.verbose == 1:
                 end_time = time.time()
-                utils.uprint("Done saving  the timetable")
-                utils.uprint(
+                self.log("Done saving  the timetable")
+                self.log(
                     f"Saving the timetable took {end_time - start_time} seconds")
-                utils.uprint(SEPERATION_STRING)
+                self.log(SEPERATION_STRING)
 
         return self.timetable

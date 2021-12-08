@@ -6,11 +6,14 @@ import threading
 
 from solver import LPSolver
 from solver.GCSolverGUI import GCSolverGUI
+from solver.LPSolverGUI import LPSolverGUI
 
 from .parser import parse_json_file
 from .datatypes import Timetable
 from .GCSolver import GCSolver
 from .LPSolver import LPSolver
+
+from .Program import Program
 
 
 def draw_figure(canvas, figure, loc=(0, 0)):
@@ -20,7 +23,7 @@ def draw_figure(canvas, figure, loc=(0, 0)):
     return figure_canvas_agg
 
 
-class GUI:
+class GUI(Program):
     def __init__(self, args: dict):
         self.args = args
         sg.theme("DarkAmber")
@@ -30,6 +33,7 @@ class GUI:
             [sg.Button("Preload file", key="-PRELOADFILE-")],
             [sg.Checkbox("Linear programming solver", key="-LPSOLVER-"),
              sg.Checkbox("Graph colouring solver", key="-GCSOLVER-")],
+            [sg.Checkbox("Verbosity", key="-VERBOSITY-")],
             [sg.Button("Run")]
         ]
         info_column = [
@@ -49,6 +53,9 @@ class GUI:
         self.timetable: Timetable = None
         self.solvers = []
         self.guis = []
+
+    def log(self, msg: str):
+        pass
 
     def run(self):
         while True:
@@ -109,6 +116,9 @@ class GUI:
                     # The file was not preloaded, parse it now
                     parse_file()
 
+                verbosity = int(values["-VERBOSITY-"])
+                print(verbosity)
+
                 if values["-GCSOLVER-"] == True:
                     # Start a new window with a GCSolver
                     timetable: Timetable = deepcopy(self.timetable)
@@ -118,8 +128,9 @@ class GUI:
                     self.guis.append(gui)
                 if values["-LPSOLVER-"] == True:
                     timetable: Timetable = deepcopy(self.timetable)
-                    solver = LPSolver(timetable)
+                    solver = LPSolver(timetable, verbose=verbosity)
                     self.solvers.append(solver)
-                    # Start a new window with a LPSolver
+                    gui = LPSolverGUI(solver)
+                    self.guis.append(gui)
 
         self.window.close()

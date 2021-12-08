@@ -16,3 +16,6 @@ class Solver(Protocol):
 
     def __solve(self) -> Timetable:
         ...
+
+    def log(self, msg: str):
+        ...
