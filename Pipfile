@@ -11,6 +11,8 @@ pysimplegui = "*"
 tk = "*"
 openpyxl = "*"
 scipy = "*"
+sklearn = "*"
+numpy = "*"
 
 [dev-packages]
 autopep8 = "*"
