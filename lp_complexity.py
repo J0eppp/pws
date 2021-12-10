@@ -32,7 +32,7 @@ def main():
     subject_information = [SubjectInformation("Nederlands", 1, 2), SubjectInformation(
         "Engels", 1, 2), SubjectInformation("Wiskunde", 1, 2)]
 
-    for i in range(10):
+    for i in range(30):
         groups = [Group(i, str(i), 1, ["Nederlands", "Engels", "Wiskunde"], [])
                   for i in range(4 * (i + 1))]
         timetable: Timetable = Timetable(
